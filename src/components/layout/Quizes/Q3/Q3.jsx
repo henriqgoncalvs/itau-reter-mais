@@ -1,61 +1,55 @@
-import { useEffect, useState } from 'react';
-
+import checkbox from 'assets/img/checkmark.svg';
 import Button from 'components/common/Button/Button';
 import Line from 'components/common/Line/Line';
 import Title from 'components/common/Title/Title';
-import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox/QuestionsCheckbox';
+import Dialog from 'components/organisms/Dialog';
+import InformativeCheckboxes from 'components/organisms/InformativeCheckboxes';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
-import { usePipwerksContext } from 'contexts/PipwerksProvider';
+
+const messages = [
+  {
+    id: 0,
+    text: 'Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é [USER], em que posso ajudar? Está tudo bem com você?',
+  },
+];
 
 const options = [
   {
     id: 0,
+    title: 'Acolha',
     description:
       'Eu sou cliente há bastante tempo e, por isso, tenho vários benefícios.',
+    icon: checkbox,
   },
   {
     id: 1,
+    title: 'Transmita confiança',
     description: 'Eu me sinto único, porque o atendimento é personalizado.',
+    icon: checkbox,
   },
   {
     id: 2,
+    title: 'Tranquilize',
     description:
       'Parecem que eles me conhecem há um tempão e sempre me oferencem exatamente o que eu preciso.',
+    icon: checkbox,
   },
 ];
 
-const Q1 = ({ nextPage }) => {
-  const { set, get } = usePipwerksContext();
-  const [optionsAnswer, setOptionsAnswer] = useState(0);
-  const [user, setUser] = useState('');
-
+const Q3 = ({ nextPage }) => {
   const handleNext = () => {
-    if (optionsAnswer === 2) {
-      set('score', 10);
-    }
     nextPage();
   };
 
-  useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
-
   return (
     <QuizBlock>
-      <Title weight="bold" align="center" size="medium">
-        Tão importante como descobrir o real motivo pelo qual o cliente quer
-        partir é saber o que podemos fazer para ele ficar.
+      <Title size="medium">
+        Por isso, a primeira coisa que fazemos quando o cliente nos procura,
+        independentemente do canal, é: <strong>ACOLHER</strong>
       </Title>
-      <Title align="center">
-        {user}, ao pensar nas marcas, produtos e serviços que gosta, o que faz
-        com que você continue sendo cliente?
-      </Title>
+      <Dialog messages={messages} />
 
-      <QuestionsCheckbox setValue={setOptionsAnswer} options={options} />
-
-      <Button onClick={handleNext}>Confirmar</Button>
+      <InformativeCheckboxes options={options} />
 
       <Line />
 
@@ -68,8 +62,9 @@ const Q1 = ({ nextPage }) => {
         seus sonhos, sua família, suas conquistas e até suas dificuldades no
         momento.
       </Title>
+      <Button onClick={handleNext}>Confirmar</Button>
     </QuizBlock>
   );
 };
 
-export default Q1;
+export default Q3;
