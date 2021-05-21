@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 
 const sizeModifiers = {
   small: (theme) => css`
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.xsmall};
   `,
   medium: (theme) => css`
-    font-size: ${theme.font.sizes.medium};
+    font-size: ${theme.font.sizes.small};
   `,
   large: (theme) => css`
     font-size: ${theme.font.sizes.xlarge};
@@ -15,7 +15,7 @@ const sizeModifiers = {
 const marginModifiers = {
   small: () => css`
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   `,
   medium: () => css`
     margin-top: 0.8rem;

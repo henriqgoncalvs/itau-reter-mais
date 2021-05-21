@@ -5,11 +5,10 @@ export const Wrapper = styled.div`
     ${theme.utils.display.flex.center}
 
     height: 100%;
-    min-height: calc(100vh - 20rem);
+    min-height: calc(100vh - 10rem);
+
+    padding: 5rem;
 
     display: ${display};
-
-    margin-top: 10rem;
-    margin-bottom: 10rem;
   `}
 `;

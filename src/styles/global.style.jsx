@@ -51,8 +51,6 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${theme.font.sizes.small};
       min-height: calc(100vh - 10rem);
 
-      padding: 5rem;
-
       ${theme.utils.display.flex.center}
     }
 
