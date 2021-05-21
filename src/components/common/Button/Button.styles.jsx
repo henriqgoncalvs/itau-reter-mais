@@ -23,12 +23,12 @@ import styled from 'styled-components';
 
 const sizeModifiers = {
   small: (theme) => `
-    font-size: ${theme.font.sizes.xxsmall};
-    padding: ${theme.utils.button.padding.small};
+    font-size: ${theme.font.sizes.xxxsmall};
+    padding: ${theme.utils.button.padding.xsmall};
   `,
   medium: (theme) => `
-    font-size: ${theme.font.sizes.xsmall};
-    padding: ${theme.utils.button.padding.medium};
+    font-size: ${theme.font.sizes.xxsmall};
+    padding: ${theme.utils.button.padding.small};
   `,
   large: (theme) => `
     font-size: ${theme.font.sizes.medium};

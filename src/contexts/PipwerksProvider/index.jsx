@@ -27,8 +27,8 @@ const PipwerksProvider = ({ children }) => {
     pipwerks.SCORM.set(dataModelParser[dataModel], value);
   };
 
-  const get = (dataModel, value) => {
-    pipwerks.SCORM.get(dataModelParser[dataModel], value);
+  const get = (dataModel) => {
+    pipwerks.SCORM.get(dataModelParser[dataModel]);
   };
 
   return (
