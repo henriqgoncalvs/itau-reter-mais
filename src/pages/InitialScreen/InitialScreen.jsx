@@ -1,9 +1,11 @@
+import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
+
 const InitialScreen = ({ setQuizInit }) => (
-  <div className="flex flex-col items-center justify-center gap-14 px-12 max-w-screen-md py-8 px-6 w-screen md:pt-0">
+  <QuizBlock>
     <button type="button" onClick={() => setQuizInit(true)}>
       QUERO APRENDER!
     </button>
-  </div>
+  </QuizBlock>
 );
 
 export default InitialScreen;

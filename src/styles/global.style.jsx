@@ -48,7 +48,9 @@ const GlobalStyle = createGlobalStyle`
       background-repeat: no-repeat;
       color: ${theme.colors.text};
       font-size: ${theme.font.sizes.small};
-      min-height: 100vh;
+      min-height: calc(100vh - 20rem);
+
+      padding: 10rem;
 
       ${theme.utils.display.flex.center}
     }

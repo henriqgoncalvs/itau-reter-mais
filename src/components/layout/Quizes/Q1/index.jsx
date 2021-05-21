@@ -1,10 +1,12 @@
+import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
+
 const Q1 = ({ nextPage }) => {
   const handleNext = () => {
     nextPage();
   };
 
   return (
-    <div>
+    <QuizBlock>
       <h1>
         O processo será interativo e você precisará tomar ações ao longo da
         jornada
@@ -15,7 +17,7 @@ const Q1 = ({ nextPage }) => {
       <button onClick={handleNext} type="button">
         VAMOS!!
       </button>
-    </div>
+    </QuizBlock>
   );
 };
 

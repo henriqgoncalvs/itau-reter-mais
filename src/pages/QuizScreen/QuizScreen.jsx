@@ -1,5 +1,5 @@
-import Q1 from 'components/organisms/Quizes/Q1';
-import Q20 from 'components/organisms/Quizes/Q2';
+import Q1 from 'components/layout/Quizes/Q1';
+import Q20 from 'components/layout/Quizes/Q2';
 import useQuiz from 'hooks/use-quiz';
 
 const QuizScreen = () => {

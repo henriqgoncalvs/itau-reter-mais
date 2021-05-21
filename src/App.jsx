@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Logo from 'components/common/Logo/Logo';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 import InitialScreen from 'pages/InitialScreen';
 import QuizScreen from 'pages/QuizScreen';
@@ -13,10 +14,11 @@ const App = () => {
   }
 
   return (
-    <div className="bg-app bg-center bg-no-repeat bg-cover w-full min-h-screen flex items-center justify-center">
+    <>
+      <Logo />
       {!quizInit && <InitialScreen setQuizInit={setQuizInit} />}
       {quizInit && <QuizScreen />}
-    </div>
+    </>
   );
 };
 
