@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { usePipwerksContext } from 'lib/contexts/PipwerksProvider';
+import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
 const Q20 = ({ setIndex }) => {
   const { pipwerks } = usePipwerksContext();

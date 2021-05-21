@@ -1,6 +1,6 @@
-import Q1 from 'lib/components/organisms/Quizes/Q1';
-import Q20 from 'lib/components/organisms/Quizes/Q20';
-import useQuiz from 'lib/hooks/use-quiz';
+import Q1 from 'components/organisms/Quizes/Q1';
+import Q20 from 'components/organisms/Quizes/Q2';
+import useQuiz from 'hooks/use-quiz';
 
 const QuizScreen = () => {
   const { index, setIndex, nextPage } = useQuiz();

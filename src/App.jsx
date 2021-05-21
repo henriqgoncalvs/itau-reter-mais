@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import InitialScreen from 'components/layout/InitialScreen';
-import QuizScreen from 'components/layout/QuizScreen';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
+import InitialScreen from 'pages/InitialScreen';
+import QuizScreen from 'pages/QuizScreen';
 
 const App = () => {
   const [quizInit, setQuizInit] = useState(false);
