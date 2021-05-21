@@ -17,7 +17,7 @@ const Q20 = ({ setIndex }) => {
   };
 
   return (
-    <div>
+    <>
       {modalFinish && (
         <button onClick={() => setModalFinish(false)}>
           Feche a janela para encerrar o curso!
@@ -39,7 +39,7 @@ const Q20 = ({ setIndex }) => {
           ENCERRAR O CURSO
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

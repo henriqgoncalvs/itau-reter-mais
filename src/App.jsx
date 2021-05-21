@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import Logo from 'components/common/Logo/Logo';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
-import InitialScreen from 'pages/InitialScreen';
 import QuizScreen from 'pages/QuizScreen';
 
 const App = () => {
-  const [quizInit, setQuizInit] = useState(false);
   const { pipwerks } = usePipwerksContext();
 
   if (!pipwerks) {
@@ -14,11 +12,10 @@ const App = () => {
   }
 
   return (
-    <>
+    <AnimatePresence exitBeforeEnter>
       <Logo />
-      {!quizInit && <InitialScreen setQuizInit={setQuizInit} />}
-      {quizInit && <QuizScreen />}
-    </>
+      <QuizScreen />
+    </AnimatePresence>
   );
 };
 

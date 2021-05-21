@@ -4,7 +4,6 @@ const useScript = (resourceUrl) => {
   const [pipwerks, setPipwerks] = useState();
 
   useEffect(() => {
-    console.log('entrou', resourceUrl);
     const script = document.createElement('script');
     script.src = resourceUrl;
     script.async = false;

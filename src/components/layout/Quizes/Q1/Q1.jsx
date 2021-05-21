@@ -21,7 +21,10 @@ const Q1 = ({ nextPage }) => {
       <Title weight="bold" align="center" size="medium">
         Pra começar, como gosta de ser chamado?
       </Title>
-      <Input onChange={handleInputChange} />
+      <Input
+        onChange={handleInputChange}
+        placeholder="Digite seu nome ou apelido"
+      />
       <Button onClick={handleNext}>Vamos começar</Button>
     </QuizBlock>
   );

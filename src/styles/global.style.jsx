@@ -46,11 +46,12 @@ const GlobalStyle = createGlobalStyle`
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       color: ${theme.colors.text};
       font-size: ${theme.font.sizes.small};
-      min-height: calc(100vh - 20rem);
+      min-height: calc(100vh - 10rem);
 
-      padding: 10rem;
+      padding: 5rem;
 
       ${theme.utils.display.flex.center}
     }

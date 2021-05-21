@@ -1,29 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-function useQuiz(pagesArray = []) {
-  const [index, setIndex] = useState(0);
-  const [QuizPage, setQuizPage] = useState(<p>Carregando</p>);
-
-  useEffect(() => {
-    if (index) {
-      setQuizPage(pagesArray[index]);
-    }
-  }, [index, pagesArray]);
+function useQuiz(quizesArray = []) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [quizRenderArray, setQuizRenderArray] = useState([quizesArray[0]]);
 
   const nextPage = () => {
     const newIndex =
-      index >= pagesArray.length - 1 ? pagesArray.length : index + 1;
-    setIndex(newIndex);
-    setQuizPage(pagesArray[newIndex]);
+      activeIndex >= quizesArray.length - 1
+        ? quizesArray.length
+        : activeIndex + 1;
+    setActiveIndex(newIndex);
+    // console.log(quizesArray);
+    setQuizRenderArray((prev) => [...prev, quizesArray[newIndex]]);
+    console.log(quizRenderArray[newIndex], newIndex);
   };
 
   const previousPage = () => {
-    const newIndex = index > 0 ? index - 1 : 0;
-    setIndex(newIndex);
-    setQuizPage(pagesArray[newIndex]);
+    const newIndex = activeIndex > 0 ? activeIndex - 1 : 0;
+    setActiveIndex(newIndex);
   };
 
-  return { index, setIndex, QuizPage, nextPage, previousPage };
+  const Quiz = () => (
+    <>
+      {quizRenderArray?.map((QuizItem, index) => (
+        <QuizItem
+          key={index}
+          nextPage={nextPage}
+          style={{ display: index < activeIndex ? 'initial' : 'none' }}
+        />
+      ))}
+    </>
+  );
+
+  return {
+    activeIndex,
+    setActiveIndex,
+    nextPage,
+    previousPage,
+    Quiz,
+  };
 }
 
 export default useQuiz;
