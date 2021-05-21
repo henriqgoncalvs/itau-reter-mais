@@ -7,9 +7,9 @@ export default {
       "'Myriad Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
   },
   weights: {
-    bold: 600,
-    heavy: 800,
-    black: 900,
+    regular: 500,
+    semibold: 700,
+    bold: 800,
   },
   sizes: {
     xxxsmall: '1rem',

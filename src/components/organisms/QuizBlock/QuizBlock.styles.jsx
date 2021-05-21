@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
   background-color: ${({ theme }) => theme.colors.white};
 
-  border-radius: 3rem;
+  border-radius: 0.8rem;
 
   padding: 5rem;
 

@@ -1,11 +1,12 @@
 export default {
   button: {
     border: {
-      radius: '1rem',
+      radius: '0.5rem',
     },
     padding: {
       small: '1rem 2.5rem',
       medium: '1.5rem 3rem',
+      large: '1.5rem 3.5rem',
     },
   },
   display: {
