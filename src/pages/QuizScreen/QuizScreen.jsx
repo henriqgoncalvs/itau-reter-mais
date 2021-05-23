@@ -4,6 +4,7 @@ import Q1 from 'components/layout/Quizes/Q1';
 import Q2 from 'components/layout/Quizes/Q2';
 import Q3 from 'components/layout/Quizes/Q3';
 import Q4 from 'components/layout/Quizes/Q4';
+import Q5 from 'components/layout/Quizes/Q5';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
 import InitialScreen from 'pages/InitialScreen/InitialScreen';
 
@@ -15,6 +16,7 @@ const QuizScreen = () => {
     2: false,
     3: false,
     4: false,
+    5: false,
   });
 
   const quizRefs = useRef(new Array());
@@ -65,6 +67,13 @@ const QuizScreen = () => {
         ref={(element) => (quizRefs.current[4] = element)}
       >
         <Q4 nextPage={nextPage} />
+      </QuizPage>
+
+      <QuizPage
+        display={displayArray[5] ? 'flex' : 'none'}
+        ref={(element) => (quizRefs.current[5] = element)}
+      >
+        <Q5 nextPage={nextPage} />
       </QuizPage>
     </>
   );

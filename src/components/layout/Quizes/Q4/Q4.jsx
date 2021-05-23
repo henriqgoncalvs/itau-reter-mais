@@ -107,7 +107,7 @@ const Q4 = ({ nextPage }) => {
         </Dialog.Box>
       </Dialog>
 
-      <DialogWithIcon imgSrc={womanYellow}>
+      <DialogWithIcon>
         <Text>
           Lembre-o sobre o tempo que tem o cartão. Se ele ficou com a gente por
           tanto tempo, é porque gostou dos serviços e condições.
@@ -125,7 +125,7 @@ const Q4 = ({ nextPage }) => {
         </Dialog.Box>
       </Dialog>
 
-      <DialogWithIcon imgSrc={womanYellow}>
+      <DialogWithIcon>
         <Text>E agora, {user}, o que você diz ao cliente?</Text>
       </DialogWithIcon>
 

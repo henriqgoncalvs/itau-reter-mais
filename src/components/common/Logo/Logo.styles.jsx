@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     width: 5%;
     height: 5vw;
 
-    position: absolute;
+    position: fixed;
     top: 2rem;
     left: 5rem;
 
