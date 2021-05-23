@@ -7,6 +7,7 @@ function Text({
   alignSelf = 'initial',
   weight = 'normal',
   children = '',
+  withBackground = false,
   ...rest
 }) {
   if (tag === 'h1')
@@ -16,6 +17,7 @@ function Text({
         align={align}
         alignSelf={alignSelf}
         weight={weight}
+        withBackground={withBackground}
         {...rest}
       >
         {children}
@@ -28,6 +30,7 @@ function Text({
       align={align}
       alignSelf={alignSelf}
       weight={weight}
+      withBackground={withBackground}
       {...rest}
     >
       {children}

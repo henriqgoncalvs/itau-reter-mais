@@ -55,7 +55,11 @@ const Q2 = ({ nextPage }) => {
         com que você continue sendo cliente?
       </Text>
 
-      <QuestionsCheckbox setValue={setOptionsAnswer} options={options} />
+      <QuestionsCheckbox
+        setValue={setOptionsAnswer}
+        options={options}
+        name="Q2"
+      />
 
       <Button onClick={handleNext}>Confirmar</Button>
 

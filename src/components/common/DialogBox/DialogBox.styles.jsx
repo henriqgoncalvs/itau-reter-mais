@@ -2,7 +2,17 @@ import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
+export const Dialog = styled.div`
   width: 60%;
+
   padding: 2rem;
 
   margin-top: 2rem;
@@ -28,4 +38,11 @@ export const Wrapper = styled.div`
   ${media.lessThan('medium')`
     width: 100%;
   `}
+`;
+
+export const Icon = styled.img`
+  width: 100%;
+  max-width: 10rem;
+
+  margin-top: 2rem;
 `;

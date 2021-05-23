@@ -52,7 +52,7 @@ const Q5 = ({ nextPage }) => {
   const [answered, setAnswered] = useState(false);
 
   const handleNext = () => {
-    if (optionsAnswer && optionsAnswer === 0) {
+    if (optionsAnswer !== null && optionsAnswer === 0) {
       nextPage();
     }
   };
@@ -116,7 +116,11 @@ const Q5 = ({ nextPage }) => {
         </Text>
       </DialogWithIcon>
 
-      <QuestionsCheckbox setValue={setOptionsAnswer} options={options} />
+      <QuestionsCheckbox
+        setValue={setOptionsAnswer}
+        options={options}
+        name="Q5"
+      />
 
       {optionsAnswer === 0 && (
         <DialogAnswerFeedback correctAnswer gifSrc={computerHappyGif}>

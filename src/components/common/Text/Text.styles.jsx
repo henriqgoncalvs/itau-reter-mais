@@ -30,11 +30,18 @@ const marginModifiers = {
 };
 
 export const Heading = styled.h1`
-  ${({ theme, size, weight, align, alignSelf }) => css`
+  ${({ theme, size, weight, align, alignSelf, withBackground }) => css`
     ${size && sizeModifiers[size](theme)}
 
     font-weight: ${theme.font.weights[weight]};
     text-align: ${align || 'left'};
+
+    ${withBackground &&
+    css`
+      padding: 1rem;
+      background: ${theme.colors.secondary};
+      border-radius: ${({ theme }) => theme.utils.button.border.radius};
+    `}
 
     align-self: ${alignSelf || 'initial'};
 
@@ -44,11 +51,18 @@ export const Heading = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  ${({ theme, size, weight, align, alignSelf }) => css`
+  ${({ theme, size, weight, align, alignSelf, withBackground }) => css`
     ${size && sizeModifiers[size](theme)}
 
     font-weight: ${theme.font.weights[weight]};
     text-align: ${align || 'left'};
+
+    ${withBackground &&
+    css`
+      padding: 1rem;
+      background: ${theme.colors.secondary};
+      border-radius: ${({ theme }) => theme.utils.button.border.radius};
+    `}
 
     align-self: ${alignSelf || 'initial'};
 

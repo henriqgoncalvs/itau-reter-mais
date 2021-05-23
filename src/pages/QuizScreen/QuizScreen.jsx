@@ -5,6 +5,7 @@ import Q2 from 'components/layout/Quizes/Q2';
 import Q3 from 'components/layout/Quizes/Q3';
 import Q4 from 'components/layout/Quizes/Q4';
 import Q5 from 'components/layout/Quizes/Q5';
+import Q6 from 'components/layout/Quizes/Q6';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
 import InitialScreen from 'pages/InitialScreen/InitialScreen';
 
@@ -74,6 +75,13 @@ const QuizScreen = () => {
         ref={(element) => (quizRefs.current[5] = element)}
       >
         <Q5 nextPage={nextPage} />
+      </QuizPage>
+
+      <QuizPage
+        display={displayArray[6] ? 'flex' : 'none'}
+        ref={(element) => (quizRefs.current[6] = element)}
+      >
+        <Q6 nextPage={nextPage} />
       </QuizPage>
     </>
   );

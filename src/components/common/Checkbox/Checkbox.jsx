@@ -1,6 +1,6 @@
 import * as S from './Checkbox.styles';
 
-function Checkbox({ opt, setValue, checked }) {
+function Checkbox({ opt, setValue, checked, name }) {
   const handleChange = () => {
     setValue(opt.id);
   };
@@ -10,7 +10,7 @@ function Checkbox({ opt, setValue, checked }) {
       <input
         onChange={handleChange}
         type="radio"
-        name="radio"
+        name={name}
         value={opt.id}
         defaultChecked={checked}
       />

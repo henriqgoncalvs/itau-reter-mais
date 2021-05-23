@@ -129,7 +129,11 @@ const Q4 = ({ nextPage }) => {
         <Text>E agora, {user}, o que você diz ao cliente?</Text>
       </DialogWithIcon>
 
-      <QuestionsCheckbox setValue={setOptionsAnswer} options={options} />
+      <QuestionsCheckbox
+        setValue={setOptionsAnswer}
+        options={options}
+        name="Q4"
+      />
 
       {optionsAnswer === 0 && (
         <DialogAnswerFeedback gifSrc={computerHappyGif}>
