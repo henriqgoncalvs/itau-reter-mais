@@ -12,7 +12,7 @@ function ListTable({ items, yes }) {
         {yes ? 'Sim' : 'Não'}
       </S.TableTitle>
       {items.map((item) => (
-        <li key="item">
+        <li key={item}>
           <span>
             <img src={checkmarkWhite} />
           </span>

@@ -29,10 +29,6 @@ const QuizScreen = () => {
     quizRefs.current[activeIndex].scrollIntoView();
   }, [activeIndex]);
 
-  useEffect(() => {
-    console.log(quizRefs);
-  }, [quizRefs]);
-
   return (
     <>
       <div ref={(element) => (quizRefs.current[0] = element)}>

@@ -31,7 +31,7 @@ const Q2 = ({ nextPage }) => {
   const [user, setUser] = useState('');
 
   const handleNext = () => {
-    if (optionsAnswer) {
+    if (optionsAnswer !== null) {
       if (optionsAnswer === 2) {
         incrementScore(10);
       }

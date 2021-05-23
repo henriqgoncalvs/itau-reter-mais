@@ -1,5 +1,3 @@
-import { AnimatePresence } from 'framer-motion';
-
 import Logo from 'components/common/Logo/Logo';
 
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
@@ -14,10 +12,10 @@ const App = () => {
   }
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <>
       <Logo />
       <QuizScreen />
-    </AnimatePresence>
+    </>
   );
 };
 
