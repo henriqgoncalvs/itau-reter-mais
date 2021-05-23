@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   width: 60%;
   padding: 2rem;
 
+  margin-top: 2rem;
+
   ${({ theme, direction }) => css`
     border-radius: ${theme.utils.border.radius};
 
@@ -15,9 +17,9 @@ export const Wrapper = styled.div`
           border: 2px solid ${theme.colors.secondary};
         `
       : css`
-          background: ${theme.colors.lighterPrimary};
+          background: ${theme.colors.dialogBackground};
           align-self: flex-start;
-          border: 2px solid ${theme.colors.primary};
+          border: 2px solid ${theme.colors.lighterPrimary};
         `}
 
     font-size: ${theme.font.sizes.xsmall};

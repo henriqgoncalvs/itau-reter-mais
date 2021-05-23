@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from 'components/common/Button/Button';
 import Line from 'components/common/Line/Line';
 import Text from 'components/common/Text/Text';
-import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox/QuestionsCheckbox';
+import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
@@ -24,16 +24,18 @@ const options = [
   },
 ];
 
-const Q1 = ({ nextPage }) => {
-  const { set, get } = usePipwerksContext();
-  const [optionsAnswer, setOptionsAnswer] = useState(0);
+const Q2 = ({ nextPage }) => {
+  const { incrementScore, get } = usePipwerksContext();
+  const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [user, setUser] = useState('');
 
   const handleNext = () => {
-    if (optionsAnswer === 2) {
-      set('score', 10);
+    if (optionsAnswer) {
+      if (optionsAnswer === 2) {
+        incrementScore(10);
+      }
+      nextPage();
     }
-    nextPage();
   };
 
   useEffect(() => {
@@ -72,4 +74,4 @@ const Q1 = ({ nextPage }) => {
   );
 };
 
-export default Q1;
+export default Q2;

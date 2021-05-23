@@ -1,9 +1,27 @@
 import styled, { css } from 'styled-components';
 
+const directionModifier = {
+  left: () => css`
+    flex-direction: row;
+  `,
+  right: () => css`
+    flex-direction: row-reverse;
+  `,
+};
+
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, direction, withBackground }) => css`
     ${theme.utils.display.flex.spaceBetween}
-    align-items: flex-start;
+
+    ${direction && directionModifier[direction]()}
+
+    ${withBackground &&
+    css`
+      padding: 2rem;
+      background: ${theme.colors.evenLighterSecondary};
+      border: 2px solid ${theme.colors.secondary};
+      border-radius: ${({ theme }) => theme.utils.button.border.radius};
+    `}
 
     width: 100%;
 

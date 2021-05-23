@@ -6,12 +6,7 @@ function QuestionsCheckbox({ options, setValue }) {
   return (
     <S.Wrapper>
       {options.map((opt) => (
-        <Checkbox
-          key={opt.id}
-          setValue={setValue}
-          opt={opt}
-          checked={opt.id === 0}
-        />
+        <Checkbox key={opt.id} setValue={setValue} opt={opt} />
       ))}
     </S.Wrapper>
   );

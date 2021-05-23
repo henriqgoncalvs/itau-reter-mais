@@ -30,11 +30,13 @@ const marginModifiers = {
 };
 
 export const Heading = styled.h1`
-  ${({ theme, size, weight, align }) => css`
+  ${({ theme, size, weight, align, alignSelf }) => css`
     ${size && sizeModifiers[size](theme)}
 
     font-weight: ${theme.font.weights[weight]};
     text-align: ${align || 'left'};
+
+    align-self: ${alignSelf || 'initial'};
 
     margin-top: 1rem;
     margin-bottom: 3rem;
@@ -42,11 +44,13 @@ export const Heading = styled.h1`
 `;
 
 export const Paragraph = styled.p`
-  ${({ theme, size, weight, align }) => css`
+  ${({ theme, size, weight, align, alignSelf }) => css`
     ${size && sizeModifiers[size](theme)}
 
     font-weight: ${theme.font.weights[weight]};
     text-align: ${align || 'left'};
+
+    align-self: ${alignSelf || 'initial'};
 
     margin-top: 0.5rem;
     margin-bottom: 1rem;

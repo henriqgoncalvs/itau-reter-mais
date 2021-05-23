@@ -5,5 +5,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 1rem 0 4rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
 `;
