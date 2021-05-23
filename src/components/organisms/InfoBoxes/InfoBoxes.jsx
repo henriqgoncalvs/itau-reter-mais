@@ -7,7 +7,9 @@ function InfoBoxes({ boxes }) {
     <S.Wrapper>
       <S.BoxWrapper>
         {boxes.map((box) => (
-          <InfoBox key={box.id}>{box.text}</InfoBox>
+          <InfoBox key={box.id} icon={box.icon}>
+            {box.text}
+          </InfoBox>
         ))}
       </S.BoxWrapper>
     </S.Wrapper>

@@ -1,7 +1,12 @@
 import * as S from './InfoBox.styles';
 
-function InfoBox({ children, ...rest }) {
-  return <S.Box {...rest}>{children}</S.Box>;
+function InfoBox({ children, icon, ...rest }) {
+  return (
+    <S.Box {...rest}>
+      {icon && <img src={icon} />}
+      {children}
+    </S.Box>
+  );
 }
 
 export default InfoBox;
