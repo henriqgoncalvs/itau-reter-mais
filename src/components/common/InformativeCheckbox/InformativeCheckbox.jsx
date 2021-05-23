@@ -5,8 +5,8 @@ function InformativeCheckbox({ opt }) {
     <S.Wrapper>
       <img src={opt.icon} />
       <S.Content>
-        <p>{opt.title}</p>
-        <p>{opt.description}</p>
+        {opt.title && <p>{opt.title}</p>}
+        {opt.description && <p>{opt.description}</p>}
       </S.Content>
     </S.Wrapper>
   );

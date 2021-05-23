@@ -6,19 +6,13 @@ import Q3 from 'components/layout/Quizes/Q3';
 import Q4 from 'components/layout/Quizes/Q4';
 import Q5 from 'components/layout/Quizes/Q5';
 import Q6 from 'components/layout/Quizes/Q6';
+import Q7 from 'components/layout/Quizes/Q7';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
 import InitialScreen from 'pages/InitialScreen/InitialScreen';
 
 const QuizScreen = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [displayArray, setDisplayArray] = useState({
-    0: true,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
+  const [displayArray, setDisplayArray] = useState([true]);
 
   const quizRefs = useRef(new Array());
 
@@ -82,6 +76,13 @@ const QuizScreen = () => {
         ref={(element) => (quizRefs.current[6] = element)}
       >
         <Q6 nextPage={nextPage} />
+      </QuizPage>
+
+      <QuizPage
+        display={displayArray[7] ? 'flex' : 'none'}
+        ref={(element) => (quizRefs.current[7] = element)}
+      >
+        <Q7 nextPage={nextPage} />
       </QuizPage>
     </>
   );
