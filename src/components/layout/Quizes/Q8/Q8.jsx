@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import computerHappyGif from 'assets/img/computer-happy.gif';
+
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import DialogAnswerFeedback from 'components/organisms/DialogAnswerFeedback';
 import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
+
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
 const options = [

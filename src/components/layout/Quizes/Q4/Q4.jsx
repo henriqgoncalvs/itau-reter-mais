@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import computerHappyGif from 'assets/img/computer-happy.gif';
 import womanYellow from 'assets/img/woman-yellow.svg';
+
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
@@ -10,6 +11,7 @@ import DialogWithIcon from 'components/organisms/DialogWithIcon';
 import InfoBoxesCollapsed from 'components/organisms/InfoBoxesCollapsed/InfoBoxesCollapsed';
 import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
+
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
 const options = [

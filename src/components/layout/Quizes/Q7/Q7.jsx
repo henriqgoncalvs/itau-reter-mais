@@ -1,5 +1,10 @@
-import checkbox from 'assets/img/checkmark.svg';
 import computerHappyGif from 'assets/img/computer-happy.gif';
+import duvidaIcon from 'assets/img/duvida.png';
+import fugaDaConversaIcon from 'assets/img/fuga-da-conversa.png';
+import malEntendidoIcon from 'assets/img/mal-entendido.png';
+import prejulgamentoIcon from 'assets/img/pre-julgamento.png';
+import precoIcon from 'assets/img/preco.png';
+
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import DialogWithIcon from 'components/organisms/DialogWithIcon';
@@ -10,29 +15,29 @@ const options = [
   {
     id: 0,
     title: 'Dúvida',
-    icon: checkbox,
+    icon: duvidaIcon,
   },
   {
     id: 1,
     title: 'Mal-entendido',
-    icon: checkbox,
+    icon: malEntendidoIcon,
   },
   {
     id: 2,
     title: 'Fuga da conversa',
-    icon: checkbox,
+    icon: fugaDaConversaIcon,
   },
   {
     id: 3,
     title: 'Pré-julgamento',
     description:
       'Parecem que eles me conhecem há um tempão e sempre me oferencem exatamente o que eu preciso.',
-    icon: checkbox,
+    icon: prejulgamentoIcon,
   },
   {
     id: 4,
     title: 'Preço',
-    icon: checkbox,
+    icon: precoIcon,
   },
 ];
 

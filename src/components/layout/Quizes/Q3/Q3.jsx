@@ -1,5 +1,8 @@
-import checkbox from 'assets/img/checkmark.svg';
+import acolherIcon from 'assets/img/acolher.png';
 import computerHappyGif from 'assets/img/computer-happy.gif';
+import confiancaIcon from 'assets/img/confianca.png';
+import tranquilizarIcon from 'assets/img/tranquilizar.png';
+
 import Button from 'components/common/Button/Button';
 import Line from 'components/common/Line/Line';
 import Text from 'components/common/Text/Text';
@@ -14,20 +17,20 @@ const options = [
     title: 'Acolha',
     description:
       'Eu sou cliente há bastante tempo e, por isso, tenho vários benefícios.',
-    icon: checkbox,
+    icon: acolherIcon,
   },
   {
     id: 1,
     title: 'Transmita confiança',
     description: 'Eu me sinto único, porque o atendimento é personalizado.',
-    icon: checkbox,
+    icon: confiancaIcon,
   },
   {
     id: 2,
     title: 'Tranquilize',
     description:
       'Parecem que eles me conhecem há um tempão e sempre me oferencem exatamente o que eu preciso.',
-    icon: checkbox,
+    icon: tranquilizarIcon,
   },
 ];
 

@@ -9,6 +9,7 @@ import Q6 from 'components/layout/Quizes/Q6';
 import Q7 from 'components/layout/Quizes/Q7';
 import Q8 from 'components/layout/Quizes/Q8';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
+
 import InitialScreen from 'pages/InitialScreen/InitialScreen';
 
 const QuizScreen = () => {

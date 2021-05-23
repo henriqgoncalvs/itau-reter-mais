@@ -1,7 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 
 import Logo from 'components/common/Logo/Logo';
+
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
+
 import QuizScreen from 'pages/QuizScreen';
 
 const App = () => {
