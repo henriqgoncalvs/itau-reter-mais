@@ -1,24 +1,25 @@
-import * as S from './Title.styles';
+import * as S from './Text.styles';
 
-function Title({
+function Text({
   tag = 'p',
   size = 'small',
   align = 'left',
   weight = 'normal',
   children = '',
+  ...rest
 }) {
   if (tag === 'h1')
     return (
-      <S.Heading size={size} align={align} weight={weight}>
+      <S.Heading size={size} align={align} weight={weight} {...rest}>
         {children}
       </S.Heading>
     );
 
   return (
-    <S.Paragraph size={size} align={align} weight={weight}>
+    <S.Paragraph size={size} align={align} weight={weight} {...rest}>
       {children}
     </S.Paragraph>
   );
 }
 
-export default Title;
+export default Text;

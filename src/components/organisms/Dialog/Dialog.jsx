@@ -2,16 +2,10 @@ import DialogBox from 'components/common/DialogBox';
 
 import * as S from './Dialog.styles';
 
-function Dialog({ messages }) {
-  return (
-    <S.Wrapper>
-      {messages.map((msg) => (
-        <DialogBox key={msg.id} direction={msg.direction}>
-          {msg.text}
-        </DialogBox>
-      ))}
-    </S.Wrapper>
-  );
+function Dialog({ children }) {
+  return <S.Wrapper>{children}</S.Wrapper>;
 }
+
+Dialog.Box = DialogBox;
 
 export default Dialog;

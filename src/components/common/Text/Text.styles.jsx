@@ -3,9 +3,11 @@ import styled, { css } from 'styled-components';
 const sizeModifiers = {
   small: (theme) => css`
     font-size: ${theme.font.sizes.xsmall};
+    line-height: ${theme.font.sizes.large};
   `,
   medium: (theme) => css`
     font-size: ${theme.font.sizes.small};
+    line-height: ${theme.font.sizes.large};
   `,
   large: (theme) => css`
     font-size: ${theme.font.sizes.xlarge};

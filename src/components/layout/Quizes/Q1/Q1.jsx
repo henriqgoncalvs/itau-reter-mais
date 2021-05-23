@@ -1,6 +1,6 @@
 import Button from 'components/common/Button/Button';
 import Input from 'components/common/Input/Input';
-import Title from 'components/common/Title/Title';
+import Text from 'components/common/Text/Text';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
@@ -18,9 +18,9 @@ const Q1 = ({ nextPage }) => {
 
   return (
     <QuizBlock>
-      <Title weight="bold" align="center" size="medium">
+      <Text weight="bold" align="center" size="medium">
         Pra começar, como gosta de ser chamado?
-      </Title>
+      </Text>
       <Input
         onChange={handleInputChange}
         placeholder="Digite seu nome ou apelido"

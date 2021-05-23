@@ -1,17 +1,13 @@
 import checkbox from 'assets/img/checkmark.svg';
+import computerHappyGif from 'assets/img/computer-happy.gif';
+import womanYellow from 'assets/img/woman-yellow.svg';
 import Button from 'components/common/Button/Button';
+import DialogWithIconGif from 'components/common/DialogWithIconGif';
 import Line from 'components/common/Line/Line';
-import Title from 'components/common/Title/Title';
+import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
 import InformativeCheckboxes from 'components/organisms/InformativeCheckboxes';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
-
-const messages = [
-  {
-    id: 0,
-    text: 'Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é [USER], em que posso ajudar? Está tudo bem com você?',
-  },
-];
 
 const options = [
   {
@@ -43,25 +39,31 @@ const Q3 = ({ nextPage }) => {
 
   return (
     <QuizBlock>
-      <Title size="medium">
+      <Text size="medium">
         Por isso, a primeira coisa que fazemos quando o cliente nos procura,
         independentemente do canal, é: <strong>ACOLHER</strong>
-      </Title>
-      <Dialog messages={messages} />
+      </Text>
+      <Dialog>
+        <Dialog.Box>
+          Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é [USER], em
+          que posso ajudar? Está tudo bem com você?
+        </Dialog.Box>
+      </Dialog>
 
       <InformativeCheckboxes options={options} />
 
       <Line />
 
-      <Title align="center">
-        Todos esses motivos fazem os olhos do cliente brilhar. Principalmente
-        quando falamos de algo tão importante: sua vida financeira.
-      </Title>
-      <Title align="center">
-        Afinal, isso engloba uma série de outras coisas importantes para ele:
-        seus sonhos, sua família, suas conquistas e até suas dificuldades no
-        momento.
-      </Title>
+      <DialogWithIconGif imgSrc={womanYellow} gifSrc={computerHappyGif}>
+        <Text weight="bold" size="medium" style={{ marginBottom: '1rem' }}>
+          Pega essa dica!
+        </Text>
+        <Text>
+          Coloque-se no lugar do cliente e escute-o com atenção. As informações
+          recebidas são valiosas para você negociar e oferecer propostas
+          personalizadas.
+        </Text>
+      </DialogWithIconGif>
       <Button onClick={handleNext}>Confirmar</Button>
     </QuizBlock>
   );
