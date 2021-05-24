@@ -33,7 +33,7 @@ const Q2 = ({ nextPage }) => {
   const handleNext = () => {
     if (optionsAnswer !== null) {
       if (optionsAnswer === 2) {
-        incrementScore(10);
+        incrementScore(25);
       }
       nextPage();
     }
@@ -62,7 +62,9 @@ const Q2 = ({ nextPage }) => {
         name="Q2"
       />
 
-      <Button onClick={handleNext}>Confirmar</Button>
+      <Button onClick={handleNext} disabled={optionsAnswer === null}>
+        Confirmar
+      </Button>
 
       <Line />
 

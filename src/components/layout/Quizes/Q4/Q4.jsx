@@ -76,7 +76,7 @@ const Q4 = ({ nextPage }) => {
 
   useEffect(() => {
     if (optionsAnswer === 1 && !answered) {
-      incrementScore(10);
+      incrementScore(25);
       setAnswered(true);
     }
   }, [incrementScore, optionsAnswer, answered]);
@@ -160,7 +160,14 @@ const Q4 = ({ nextPage }) => {
         />
       )}
 
-      <Button onClick={handleNext}>Confirmar</Button>
+      <Button
+        onClick={handleNext}
+        disabled={
+          optionsAnswer === null || optionsAnswer === 0 || !allBoxesSeen
+        }
+      >
+        Confirmar
+      </Button>
     </QuizBlock>
   );
 };

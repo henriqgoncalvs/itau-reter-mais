@@ -44,9 +44,15 @@ const informativeBoxes = [
   },
 ];
 
-function Q9() {
-  const { get } = usePipwerksContext();
+function Q9({ nextPage }) {
+  const { get, set } = usePipwerksContext();
   const [user, setUser] = useState('');
+
+  useEffect(() => {
+    if (set) {
+      set('status', 'completed');
+    }
+  }, [set]);
 
   useEffect(() => {
     if (get) {
@@ -54,8 +60,8 @@ function Q9() {
     }
   }, [get]);
 
-  const handleFinish = () => {
-    console.log('acabou');
+  const handleNext = () => {
+    nextPage();
   };
 
   return (
@@ -91,7 +97,7 @@ function Q9() {
         </Text>
       </DialogWithIcon>
 
-      <Button size="large" onClick={handleFinish}>
+      <Button size="large" onClick={handleNext}>
         Finalizar
       </Button>
     </QuizBlock>

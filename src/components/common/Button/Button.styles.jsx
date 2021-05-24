@@ -45,7 +45,7 @@ const sizeModifiers = {
 //   `,
 // };
 
-const commonStyles = ({ theme, size }) => `
+const commonStyles = ({ theme, size, disabled }) => `
   ${size && sizeModifiers[size](theme)}
 
   text-decoration: none;
@@ -58,14 +58,23 @@ const commonStyles = ({ theme, size }) => `
     filter: brightness(110%);
   }
 
+
   background-color: ${theme.colors.secondary};
   border: none;
   border-radius: ${theme.utils.button.border.radius};
   color: ${theme.colors.black};
 
   font-weight: ${theme.font.weights.regular};
+
+  ${
+    disabled &&
+    `
+      cursor: not-allowed;
+      background-color: ${theme.colors.textSecondary};
+    `
+  }
 `;
 
 export const Button = styled.button`
-  ${({ theme, size }) => commonStyles({ theme, size })}
+  ${({ theme, size, disabled }) => commonStyles({ theme, size, disabled })}
 `;

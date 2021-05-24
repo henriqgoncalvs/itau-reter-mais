@@ -37,7 +37,7 @@ const Q8 = ({ nextPage }) => {
 
   useEffect(() => {
     if (optionsAnswer === 0 && !answered) {
-      incrementScore(10);
+      incrementScore(25);
       setAnswered(true);
     }
   }, [incrementScore, optionsAnswer, answered]);
@@ -80,7 +80,12 @@ const Q8 = ({ nextPage }) => {
         </DialogAnswerFeedback>
       )}
 
-      <Button onClick={handleNext}>Confirmar</Button>
+      <Button
+        onClick={handleNext}
+        disabled={optionsAnswer === null || optionsAnswer === 1}
+      >
+        Confirmar
+      </Button>
     </QuizBlock>
   );
 };

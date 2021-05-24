@@ -9,6 +9,7 @@ import Q6 from 'components/layout/Quizes/Q6';
 import Q7 from 'components/layout/Quizes/Q7';
 import Q8 from 'components/layout/Quizes/Q8';
 import Q9 from 'components/layout/Quizes/Q9';
+import Q10 from 'components/layout/Quizes/Q10';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
 
 import InitialScreen from 'pages/InitialScreen/InitialScreen';
@@ -20,7 +21,7 @@ const QuizScreen = () => {
   const quizRefs = useRef(new Array());
 
   const nextPage = () => {
-    const newIndex = activeIndex + 1;
+    const newIndex = activeIndex < 10 ? activeIndex + 1 : activeIndex;
     setDisplayArray((prev) => ({ ...prev, [newIndex]: true }));
     setActiveIndex(newIndex);
   };
@@ -96,6 +97,13 @@ const QuizScreen = () => {
         ref={(element) => (quizRefs.current[9] = element)}
       >
         <Q9 nextPage={nextPage} />
+      </QuizPage>
+
+      <QuizPage
+        display={displayArray[10] ? 'flex' : 'none'}
+        ref={(element) => (quizRefs.current[10] = element)}
+      >
+        <Q10 nextPage={nextPage} />
       </QuizPage>
     </>
   );
