@@ -31,8 +31,6 @@ const options = [
   {
     id: 3,
     title: 'Pré-julgamento',
-    description:
-      'Parecem que eles me conhecem há um tempão e sempre me oferencem exatamente o que eu preciso.',
     icon: prejulgamentoIcon,
   },
   {
@@ -77,9 +75,9 @@ const Q7 = ({ nextPage }) => {
             Pega essa dica!
           </Text>
           <Text>
-            Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá
-            cartas na manga para continuar a negociação se o cliente recusar a
-            primeira oferta.
+            Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá{' '}
+            <strong>cartas na manga</strong> para continuar a negociação se o
+            cliente recusar a primeira oferta.
           </Text>
         </DialogWithIcon>
       </AnimatedWrapper>

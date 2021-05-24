@@ -71,12 +71,14 @@ const Q2 = ({ nextPage }) => {
       <AnimatedWrapper direction="right" delay={1.8}>
         <Text align="center">
           Todos esses motivos fazem os olhos do cliente brilhar. Principalmente
-          quando falamos de algo tão importante: sua vida financeira.
+          quando falamos de algo tão importante: sua{' '}
+          <strong>vida financeira</strong>.
         </Text>
         <Text align="center">
           Afinal, isso engloba uma série de outras coisas importantes para ele:
-          seus sonhos, sua família, suas conquistas e até suas dificuldades no
-          momento.
+          seus <strong>sonhos</strong>, sua <strong>família</strong>, suas{' '}
+          <strong>conquistas</strong> e até suas <strong>dificuldades</strong>{' '}
+          no momento.
         </Text>
       </AnimatedWrapper>
     </QuizBlock>

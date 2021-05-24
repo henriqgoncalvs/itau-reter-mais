@@ -24,8 +24,8 @@ const yesNoItems = {
   ],
   no: [
     'Informe as condições do cancelamento (checklist colaborativa) antes de efetivá-lo.',
-    'Faça um resumo das novas condições do cartão para evitar dúvidas no futuro.',
-    'Em caso de mudança de grade, explique todos os detalhes e pergunte se o cliente tem dúvidas.',
+    'Para os cartões que possuem programas de pontos, destaque que ele deixará de participar do programa e não pontuará mais nas próximas faturas.',
+    'Confirme que o cartão foi cancelado.',
     'Caso o cliente solicite, gere o número de protocolo do atendimento.',
   ],
 };
@@ -93,7 +93,7 @@ function Q9({ nextPage }) {
       <AnimatedWrapper direction="right" delay={1.7}>
         <DialogWithIcon>
           Ficamos por aqui, {user}! Mas você pode continuar sua jornada e
-          aprender mais sobre retenção. Acesse XXXX.
+          aprender mais sobre retenção.
           <Text>
             Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá
             cartas na manga para continuar a negociação se o cliente recusar a

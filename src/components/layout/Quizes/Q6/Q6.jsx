@@ -82,8 +82,7 @@ const Q6 = ({ nextPage }) => {
 
         <Dialog>
           <Dialog.Box direction="left" withIcon>
-            Não sabia que eu posso fazer parte do Programa de Pontos. Como
-            funciona isso?
+            Minha anuidade é muito alta, é um absurdo…
           </Dialog.Box>
         </Dialog>
 

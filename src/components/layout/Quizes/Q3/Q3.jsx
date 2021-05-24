@@ -18,21 +18,20 @@ const options = [
   {
     id: 0,
     title: 'Acolha',
-    description:
-      'Eu sou cliente há bastante tempo e, por isso, tenho vários benefícios.',
+    description: 'Faça um atendimento personalizado. Cada cliente é único!',
     icon: acolherIcon,
   },
   {
     id: 1,
     title: 'Transmita confiança',
-    description: 'Eu me sinto único, porque o atendimento é personalizado.',
+    description: 'Mostre ao cliente que você quer ajudá-lo.',
     icon: confiancaIcon,
   },
   {
     id: 2,
     title: 'Tranquilize',
     description:
-      'Parecem que eles me conhecem há um tempão e sempre me oferencem exatamente o que eu preciso.',
+      'Esteja à disposição para encontrar uma solução junto com o cliente e faça-o perceber que a situação vai ser resolvida.',
     icon: tranquilizarIcon,
   },
 ];
@@ -75,8 +74,9 @@ const Q3 = ({ nextPage }) => {
           </Text>
           <Text>
             Coloque-se no lugar do cliente e escute-o com atenção. As
-            informações recebidas são valiosas para você negociar e oferecer
-            propostas personalizadas.
+            informações recebidas são valiosas para você{' '}
+            <strong>negociar</strong> e oferecer
+            <strong>propostas personalizadas</strong>.
           </Text>
         </DialogWithIcon>
       </AnimatedWrapper>

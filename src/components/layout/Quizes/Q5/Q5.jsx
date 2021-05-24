@@ -79,7 +79,7 @@ const Q5 = ({ nextPage }) => {
           Pronto! Você descobriu a dor do cliente, ou seja, o motivo que o levou
           a querer cancelar o cartão. É aí que você entra em ação para mostrar
           os
-          <strong>benefícios que ele tem ao continuar com a gente.</strong>
+          <strong> benefícios que ele tem ao continuar com a gente.</strong>
         </Text>
       </AnimatedWrapper>
 
@@ -90,9 +90,9 @@ const Q5 = ({ nextPage }) => {
 
         <Text alignSelf="flex-start">
           Se, mesmo após mostrar os benefícios, o cliente ainda não estiver
-          convencido a ficar, use a Matriz de Oferta de acordo com o seu cartão
-          e roteiro na Colaborativa. Ela é sua aliada na negociação! Acompanhe a
-          ordem que devemos aplicá-la:
+          convencido a ficar, use a <strong>Matriz de Oferta</strong> de acordo
+          com o seu cartão e roteiro na Colaborativa. Ela é sua aliada na
+          negociação! Acompanhe a ordem que devemos aplicá-la:
         </Text>
       </AnimatedWrapper>
 
