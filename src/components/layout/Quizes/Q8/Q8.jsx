@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import justin from 'assets/img/nao-vejo-a-hora-de-lancar-spiderman-no-way-home.gif';
 import suzana from 'assets/img/suzana-parabens.gif';
 
+import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import DialogAnswerFeedback from 'components/organisms/DialogAnswerFeedback';
@@ -44,48 +45,58 @@ const Q8 = ({ nextPage }) => {
 
   return (
     <QuizBlock>
-      <Text alignSelf="flex-start" weight="bold" size="medium">
-        Conduza para o fechamento
-      </Text>
+      <AnimatedWrapper direction="top">
+        <Text alignSelf="flex-start" weight="bold" size="medium">
+          Conduza para o fechamento
+        </Text>
 
-      <Text alignSelf="flex-start">
-        Você mostrou todos os benefícios e fez as ofertas disponíveis de acordo
-        com o perfil do cliente. Mas, ainda assim, ele não tem certeza… E agora,
-        o que você diz, User?
-      </Text>
+        <Text alignSelf="flex-start">
+          Você mostrou todos os benefícios e fez as ofertas disponíveis de
+          acordo com o perfil do cliente. Mas, ainda assim, ele não tem certeza…
+          E agora, o que você diz, User?
+        </Text>
 
-      <Text alignSelf="flex-start">
-        Seja racional e use as informações fornecidas pelo cliente ou pelo
-        sistema para encontrar a melhor solução.
-      </Text>
+        <Text alignSelf="flex-start">
+          Seja racional e use as informações fornecidas pelo cliente ou pelo
+          sistema para encontrar a melhor solução.
+        </Text>
+      </AnimatedWrapper>
 
-      <QuestionsCheckbox
-        setValue={setOptionsAnswer}
-        options={options}
-        name="Q8"
-      />
+      <AnimatedWrapper delay={0.6}>
+        <QuestionsCheckbox
+          setValue={setOptionsAnswer}
+          options={options}
+          name="Q8"
+        />
+      </AnimatedWrapper>
 
       {optionsAnswer === 0 && (
-        <DialogAnswerFeedback correctAnswer gifSrc={suzana}>
-          Show! Vale a pena fazer um último esforço e mostrar que o cliente está
-          deixando passar uma ótima oportunidade. Por isso repasse todos os
-          benefícios que ele tem ao ficar com o cartão.
-        </DialogAnswerFeedback>
+        <AnimatedWrapper direction="bottom">
+          <DialogAnswerFeedback correctAnswer gifSrc={suzana}>
+            Show! Vale a pena fazer um último esforço e mostrar que o cliente
+            está deixando passar uma ótima oportunidade. Por isso repasse todos
+            os benefícios que ele tem ao ficar com o cartão.
+          </DialogAnswerFeedback>
+        </AnimatedWrapper>
       )}
 
       {optionsAnswer === 1 && (
-        <DialogAnswerFeedback gifSrc={justin}>
-          Calma lá! Vale a pena fazer um último esforço e mostrar que o cliente
-          está deixando passar uma ótima oportunidade.
-        </DialogAnswerFeedback>
+        <AnimatedWrapper direction="bottom">
+          <DialogAnswerFeedback gifSrc={justin}>
+            Calma lá! Vale a pena fazer um último esforço e mostrar que o
+            cliente está deixando passar uma ótima oportunidade.
+          </DialogAnswerFeedback>
+        </AnimatedWrapper>
       )}
 
-      <Button
-        onClick={handleNext}
-        disabled={optionsAnswer === null || optionsAnswer === 1}
-      >
-        Confirmar
-      </Button>
+      <AnimatedWrapper direction="bottom" delay={1.2}>
+        <Button
+          onClick={handleNext}
+          disabled={optionsAnswer === null || optionsAnswer === 1}
+        >
+          Confirmar
+        </Button>
+      </AnimatedWrapper>
     </QuizBlock>
   );
 };

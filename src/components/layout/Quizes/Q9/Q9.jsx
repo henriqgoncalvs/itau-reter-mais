@@ -4,6 +4,7 @@ import acolherIcon from 'assets/img/acolher.png';
 import confiancaIcon from 'assets/img/confianca.png';
 import personalizadoIcon from 'assets/img/personalizado.png';
 
+import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
 import Dialog from 'components/organisms/Dialog';
@@ -66,40 +67,52 @@ function Q9({ nextPage }) {
 
   return (
     <QuizBlock>
-      <Text alignSelf="flex-start" weight="bold" size="medium">
-        Cliente retido?
-      </Text>
-
-      <Text alignSelf="flex-start">
-        Você mostrou todos os benefícios e fez as ofertas disponíveis de acordo
-        com o perfil do cliente. Mas, ainda assim, ele não tem certeza… E agora,
-        o que você diz, {user}?
-      </Text>
-
-      <YesNoTable tableItems={yesNoItems} />
-
-      <Dialog>
-        <Dialog.Box>
-          Poderia ajudar em algo mais? Agradeço a ligação. Tenha um excelente
-          dia!
-        </Dialog.Box>
-      </Dialog>
-
-      <InfoBoxes boxes={informativeBoxes} />
-
-      <DialogWithIcon>
-        Ficamos por aqui, {user}! Mas você pode continuar sua jornada e aprender
-        mais sobre retenção. Acesse XXXX.
-        <Text>
-          Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá
-          cartas na manga para continuar a negociação se o cliente recusar a
-          primeira oferta.
+      <AnimatedWrapper direction="top">
+        <Text alignSelf="flex-start" weight="bold" size="medium">
+          Cliente retido?
         </Text>
-      </DialogWithIcon>
 
-      <Button size="large" onClick={handleNext}>
-        Finalizar
-      </Button>
+        <Text alignSelf="flex-start">
+          Você mostrou todos os benefícios e fez as ofertas disponíveis de
+          acordo com o perfil do cliente. Mas, ainda assim, ele não tem certeza…
+          E agora, o que você diz, {user}?
+        </Text>
+      </AnimatedWrapper>
+
+      <AnimatedWrapper direction="bottom" delay={0.6}>
+        <YesNoTable tableItems={yesNoItems} />
+      </AnimatedWrapper>
+
+      <AnimatedWrapper direction="right" delay={0.9}>
+        <Dialog>
+          <Dialog.Box>
+            Poderia ajudar em algo mais? Agradeço a ligação. Tenha um excelente
+            dia!
+          </Dialog.Box>
+        </Dialog>
+      </AnimatedWrapper>
+
+      <AnimatedWrapper delay={1.4}>
+        <InfoBoxes boxes={informativeBoxes} />
+      </AnimatedWrapper>
+
+      <AnimatedWrapper direction="right" delay={1.7}>
+        <DialogWithIcon>
+          Ficamos por aqui, {user}! Mas você pode continuar sua jornada e
+          aprender mais sobre retenção. Acesse XXXX.
+          <Text>
+            Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá
+            cartas na manga para continuar a negociação se o cliente recusar a
+            primeira oferta.
+          </Text>
+        </DialogWithIcon>
+      </AnimatedWrapper>
+
+      <AnimatedWrapper direction="bottom" delay={1.9}>
+        <Button size="large" onClick={handleNext}>
+          Finalizar
+        </Button>
+      </AnimatedWrapper>
     </QuizBlock>
   );
 }

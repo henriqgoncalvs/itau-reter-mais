@@ -13,6 +13,8 @@ export const Wrapper = styled(motion.div)`
 
   padding: 5rem;
 
+  overflow: hidden;
+
   ${({ theme }) => theme.utils.display.flex.center}
   flex-direction: column;
 
