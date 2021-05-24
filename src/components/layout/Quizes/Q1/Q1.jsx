@@ -8,7 +8,7 @@ import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
 const Q1 = ({ nextPage }) => {
-  const { set } = usePipwerksContext();
+  const { set, setUser } = usePipwerksContext();
   const [name, setName] = useState('');
 
   const handleInputChange = (e) => {
@@ -17,7 +17,7 @@ const Q1 = ({ nextPage }) => {
 
   const handleNext = () => {
     if (name !== '') {
-      set('name', name);
+      setUser(name);
       set('status', 'incomplete');
       nextPage();
     }
