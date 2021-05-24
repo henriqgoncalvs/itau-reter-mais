@@ -75,7 +75,7 @@ const Q3 = ({ nextPage }) => {
           <Text>
             Coloque-se no lugar do cliente e escute-o com atenção. As
             informações recebidas são valiosas para você{' '}
-            <strong>negociar</strong> e oferecer
+            <strong>negociar</strong> e oferecer{' '}
             <strong>propostas personalizadas</strong>.
           </Text>
         </DialogWithIcon>

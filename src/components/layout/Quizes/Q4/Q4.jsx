@@ -87,6 +87,11 @@ const Q4 = ({ nextPage }) => {
         <Text alignSelf="flex-start" weight="bold" size="medium">
           Entenda o motivo
         </Text>
+
+        <Text alignSelf="flex-start">
+          Você conheceu o cliente e criou conexão com ele. Chegou o momento de
+          <strong>entender a sua dor.</strong>
+        </Text>
       </AnimatedWrapper>
 
       <AnimatedWrapper delay={0.6}>
