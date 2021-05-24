@@ -89,7 +89,7 @@ const Q4 = ({ nextPage }) => {
         </Text>
 
         <Text alignSelf="flex-start">
-          Você conheceu o cliente e criou conexão com ele. Chegou o momento de
+          Você conheceu o cliente e criou conexão com ele. Chegou o momento de{' '}
           <strong>entender a sua dor.</strong>
         </Text>
       </AnimatedWrapper>
