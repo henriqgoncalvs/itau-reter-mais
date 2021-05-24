@@ -1,4 +1,5 @@
 import Logo from 'components/common/Logo/Logo';
+import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
 
 import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
@@ -8,7 +9,11 @@ const App = () => {
   const { pipwerks } = usePipwerksContext();
 
   if (!pipwerks) {
-    return <div>Não foi possível carregar a aplicação</div>;
+    return (
+      <QuizBlock>
+        Ocorreu um erro com o LMS, por favor tente novamente!
+      </QuizBlock>
+    );
   }
 
   return (

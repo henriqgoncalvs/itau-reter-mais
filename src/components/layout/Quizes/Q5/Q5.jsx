@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import computerHappyGif from 'assets/img/computer-happy.gif';
+import jennifer from 'assets/img/jennifer-thinking.gif';
+import simon from 'assets/img/simon-congrats.gif';
+import will from 'assets/img/will-smith.gif';
 
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
@@ -97,7 +99,7 @@ const Q5 = ({ nextPage }) => {
 
       <TextListWithIndex items={listItem} />
 
-      <DialogWithIcon gifSrc={computerHappyGif}>
+      <DialogWithIcon gifSrc={will}>
         <Text weight="bold">Pega essa dica!</Text>
         <Text>
           Dê exemplos e mostre as vantagens de um jeito que o cliente entende.
@@ -125,14 +127,14 @@ const Q5 = ({ nextPage }) => {
       />
 
       {optionsAnswer === 0 && (
-        <DialogAnswerFeedback correctAnswer gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback correctAnswer gifSrc={simon}>
           Mandou bem! Você mostrou como o cartão de crédito traz vantagens no
           dia a dia do cliente.
         </DialogAnswerFeedback>
       )}
 
       {optionsAnswer === 1 && (
-        <DialogAnswerFeedback gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback gifSrc={jennifer}>
           Não é bem por aí! Que tal mostrar como o cartão de crédito traz
           vantagens no dia a dia do cliente?
         </DialogAnswerFeedback>

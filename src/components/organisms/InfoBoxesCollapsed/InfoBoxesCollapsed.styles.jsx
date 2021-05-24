@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
   width: 80%;
+
+  ${media.lessThan('small')`
+    width: 100%;
+  `}
 
   ${({ theme }) => css`
     ${theme.utils.display.flex.spaceBetween}
@@ -23,5 +28,9 @@ export const BoxWrapper = styled.div`
   div {
     cursor: pointer;
     flex: 0.25;
+
+    ${media.lessThan('small')`
+      flex: 0.3;
+    `}
   }
 `;

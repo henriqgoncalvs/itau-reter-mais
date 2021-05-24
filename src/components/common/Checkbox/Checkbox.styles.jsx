@@ -14,7 +14,7 @@ export const Wrapper = styled.label`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 100%;
+  max-width: 100%;
 
   min-height: 35px;
 

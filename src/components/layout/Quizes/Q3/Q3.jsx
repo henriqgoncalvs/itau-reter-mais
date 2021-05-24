@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
+
 import acolherIcon from 'assets/img/acolher.png';
-import computerHappyGif from 'assets/img/computer-happy.gif';
 import confiancaIcon from 'assets/img/confianca.png';
 import tranquilizarIcon from 'assets/img/tranquilizar.png';
+import willSmith from 'assets/img/will-smith.gif';
 
 import Button from 'components/common/Button/Button';
 import Line from 'components/common/Line/Line';
@@ -10,6 +12,8 @@ import Dialog from 'components/organisms/Dialog';
 import DialogWithIcon from 'components/organisms/DialogWithIcon';
 import InformativeCheckboxes from 'components/organisms/InformativeCheckboxes';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
+
+import { usePipwerksContext } from 'contexts/PipwerksProvider';
 
 const options = [
   {
@@ -35,9 +39,18 @@ const options = [
 ];
 
 const Q3 = ({ nextPage }) => {
+  const { get } = usePipwerksContext();
+  const [user, setUser] = useState('');
+
   const handleNext = () => {
     nextPage();
   };
+
+  useEffect(() => {
+    if (get) {
+      setUser(get('name'));
+    }
+  }, [get]);
 
   return (
     <QuizBlock>
@@ -47,7 +60,7 @@ const Q3 = ({ nextPage }) => {
       </Text>
       <Dialog>
         <Dialog.Box>
-          Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é [USER], em
+          Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é {user}, em
           que posso ajudar? Está tudo bem com você?
         </Dialog.Box>
       </Dialog>
@@ -56,7 +69,7 @@ const Q3 = ({ nextPage }) => {
 
       <Line />
 
-      <DialogWithIcon gifSrc={computerHappyGif}>
+      <DialogWithIcon gifSrc={willSmith}>
         <Text weight="bold" size="medium" style={{ marginBottom: '1rem' }}>
           Pega essa dica!
         </Text>

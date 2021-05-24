@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 const directionModifier = {
   left: () => css`
@@ -21,24 +22,33 @@ export const Wrapper = styled.div`
       background: ${theme.colors.evenLighterSecondary};
       border: 2px solid ${theme.colors.secondary};
       border-radius: ${({ theme }) => theme.utils.button.border.radius};
+
+      ${media.lessThan('small')`
+        max-width: calc(100% - 4rem);
+      `}
     `}
 
     width: 100%;
 
     margin: 2rem 0;
+
+    ${media.lessThan('small')`
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    `}
   `}
 
   div:first-child {
     margin-right: 2rem;
-  }
 
-  div:last-child {
-    margin-left: 2rem;
+    ${media.lessThan('small')`
+      margin-top: 2rem;
+    `}
   }
 `;
 
 export const Img = styled.div`
-  flex: 0.1;
+  flex: ${({ gifSrc }) => (gifSrc ? 0.2 : 0.12)};
 
   ${({ theme }) => css`
     ${theme.utils.display.flex.center}
@@ -50,10 +60,16 @@ export const Img = styled.div`
 `;
 
 export const Gif = styled.div`
-  flex: 0.2;
+  flex: 0.3;
 
   border: 2px solid ${({ theme }) => theme.colors.secondary};
   border-radius: ${({ theme }) => theme.utils.button.border.radius};
+
+  margin-left: 2rem;
+
+  ${media.lessThan('small')`
+    margin-bottom: 2rem;
+  `}
 
   ${({ theme }) => css`
     ${theme.utils.display.flex.center}

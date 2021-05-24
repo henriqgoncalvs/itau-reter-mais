@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import media from 'styled-media-query';
 import { normalize } from 'styled-normalize';
 
 import bg from 'assets/img/bg.jpg';
@@ -50,6 +51,10 @@ const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.text};
       font-size: ${theme.font.sizes.small};
       min-height: calc(100vh - 10rem);
+
+      ${media.lessThan('medium')`
+        background-position: right;
+      `}
 
       ${theme.utils.display.flex.center}
     }

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
 
 export const Wrapper = styled.div`
-  width: 100%;
+  max-width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Dialog = styled.div`
-  width: 60%;
+  max-width: 60%;
 
   padding: 2rem;
 
@@ -36,7 +36,7 @@ export const Dialog = styled.div`
   `}
 
   ${media.lessThan('medium')`
-    width: 100%;
+    max-width: 100%;
   `}
 `;
 

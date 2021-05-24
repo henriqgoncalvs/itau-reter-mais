@@ -3,15 +3,10 @@ import womanRed from 'assets/img/woman-red.svg';
 
 import * as S from './DialogAnswerFeedback.styles';
 
-function DialogAnswerFeedback({
-  correctAnswer,
-  gifSrc,
-  direction = 'left',
-  children,
-}) {
+function DialogAnswerFeedback({ correctAnswer, gifSrc, children }) {
   return (
-    <S.Wrapper direction={direction}>
-      <S.Img>
+    <S.Wrapper>
+      <S.Img gifSrc={gifSrc}>
         <img src={correctAnswer ? womanGreen : womanRed} />
       </S.Img>
       <S.Text correctAnswer={correctAnswer}>{children}</S.Text>

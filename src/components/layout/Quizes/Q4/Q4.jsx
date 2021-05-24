@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import computerHappyGif from 'assets/img/computer-happy.gif';
-import womanYellow from 'assets/img/woman-yellow.svg';
+import leoCongrats from 'assets/img/leo-congrats.gif';
+import notSoFast from 'assets/img/not-so-fast.gif';
 
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
@@ -42,9 +42,11 @@ const collapsedBoxes = [
     id: 1,
     text: 'Qual é seu consumo mensal no cartão de crédito?',
     collapsedComponent: {
-      title: 'Se o volume de compras for alto:',
+      title: `
+        O consumo ajuda a identificar o tipo de cartão que o cliente precisa no dia a dia.
+      `,
       description: `
-        Texto para o 2
+        Ele pode se interessar por um cartão com anuidade isenta por consumo mínimo mensal.
       `,
     },
   },
@@ -52,9 +54,8 @@ const collapsedBoxes = [
     id: 2,
     text: 'Você tem outros cartões que usa com frequência?',
     collapsedComponent: {
-      title: 'Se o volume de compras for alto:',
       description: `
-        Texto para o 3
+        Caso tenha outros cartões, pergunte o porquê esses cartões são mais vantajosos e quais benefícios ele mais aproveita.
       `,
     },
   },
@@ -65,9 +66,10 @@ const Q4 = ({ nextPage }) => {
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [user, setUser] = useState('');
   const [answered, setAnswered] = useState(false);
+  const [allBoxesSeen, setAllBoxesSeen] = useState(false);
 
   const handleNext = () => {
-    if (optionsAnswer && optionsAnswer === 1) {
+    if (optionsAnswer && optionsAnswer === 1 && allBoxesSeen) {
       nextPage();
     }
   };
@@ -91,7 +93,7 @@ const Q4 = ({ nextPage }) => {
         Entenda o motivo
       </Text>
 
-      <DialogWithIcon imgSrc={womanYellow}>
+      <DialogWithIcon>
         <Text>
           Compreenda se houve algum motivo de insatisfação com o banco para que
           possamos resolver.
@@ -138,20 +140,25 @@ const Q4 = ({ nextPage }) => {
       />
 
       {optionsAnswer === 0 && (
-        <DialogAnswerFeedback gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback gifSrc={notSoFast}>
           Não é bem por aí! Descubra como o cliente usa o cartão para
           personalizar a negociação e fazer a oferta ideal.
         </DialogAnswerFeedback>
       )}
 
       {optionsAnswer === 1 && (
-        <DialogAnswerFeedback correctAnswer gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback correctAnswer gifSrc={leoCongrats}>
           Arrasou! Ao descobrir como o cliente usa o cartão, você pode
           personalizar a negociação e fazer a oferta ideal.
         </DialogAnswerFeedback>
       )}
 
-      {answered && <InfoBoxesCollapsed boxes={collapsedBoxes} />}
+      {answered && (
+        <InfoBoxesCollapsed
+          boxes={collapsedBoxes}
+          setAllBoxesSeen={setAllBoxesSeen}
+        />
+      )}
 
       <Button onClick={handleNext}>Confirmar</Button>
     </QuizBlock>

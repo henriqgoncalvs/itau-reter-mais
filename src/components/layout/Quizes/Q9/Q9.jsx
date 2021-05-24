@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import acolherIcon from 'assets/img/acolher.png';
 import confiancaIcon from 'assets/img/confianca.png';
-import tranquilizarIcon from 'assets/img/tranquilizar.png';
+import personalizadoIcon from 'assets/img/personalizado.png';
 
 import Button from 'components/common/Button';
 import Text from 'components/common/Text';
@@ -32,7 +32,7 @@ const yesNoItems = {
 const informativeBoxes = [
   {
     text: 'Faça um atendimento personalizado.',
-    icon: tranquilizarIcon,
+    icon: personalizadoIcon,
   },
   {
     text: 'Transmita confiança.',

@@ -1,6 +1,6 @@
-import computerHappyGif from 'assets/img/computer-happy.gif';
 import duvidaIcon from 'assets/img/duvida.png';
 import fugaDaConversaIcon from 'assets/img/fuga-da-conversa.png';
+import think from 'assets/img/henrique-que-fez-esse-site.gif';
 import malEntendidoIcon from 'assets/img/mal-entendido.png';
 import prejulgamentoIcon from 'assets/img/pre-julgamento.png';
 import precoIcon from 'assets/img/preco.png';
@@ -63,7 +63,7 @@ const Q7 = ({ nextPage }) => {
         sistema para encontrar a melhor solução.
       </Text>
 
-      <DialogWithIcon gifSrc={computerHappyGif}>
+      <DialogWithIcon gifSrc={think}>
         <Text weight="bold" size="medium" style={{ marginBottom: '1rem' }}>
           Pega essa dica!
         </Text>

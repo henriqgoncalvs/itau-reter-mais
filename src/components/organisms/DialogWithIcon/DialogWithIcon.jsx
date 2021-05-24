@@ -10,7 +10,7 @@ function DialogWithIcon({
 }) {
   return (
     <S.Wrapper direction={direction} withBackground={withBackground}>
-      <S.Img>
+      <S.Img gifSrc={gifSrc}>
         <img src={womanYellow} />
       </S.Img>
       <S.Text>{children}</S.Text>

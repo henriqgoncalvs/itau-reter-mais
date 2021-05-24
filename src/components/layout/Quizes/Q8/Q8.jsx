@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import computerHappyGif from 'assets/img/computer-happy.gif';
+import justin from 'assets/img/nao-vejo-a-hora-de-lancar-spiderman-no-way-home.gif';
+import suzana from 'assets/img/suzana-parabens.gif';
 
 import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
@@ -65,7 +66,7 @@ const Q8 = ({ nextPage }) => {
       />
 
       {optionsAnswer === 0 && (
-        <DialogAnswerFeedback correctAnswer gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback correctAnswer gifSrc={suzana}>
           Show! Vale a pena fazer um último esforço e mostrar que o cliente está
           deixando passar uma ótima oportunidade. Por isso repasse todos os
           benefícios que ele tem ao ficar com o cartão.
@@ -73,7 +74,7 @@ const Q8 = ({ nextPage }) => {
       )}
 
       {optionsAnswer === 1 && (
-        <DialogAnswerFeedback gifSrc={computerHappyGif}>
+        <DialogAnswerFeedback gifSrc={justin}>
           Calma lá! Vale a pena fazer um último esforço e mostrar que o cliente
           está deixando passar uma ótima oportunidade.
         </DialogAnswerFeedback>
