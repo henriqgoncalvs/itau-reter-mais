@@ -94,11 +94,6 @@ function Q9({ nextPage }) {
         <DialogWithIcon>
           Ficamos por aqui, {user}! Mas você pode continuar sua jornada e
           aprender mais sobre retenção.
-          <Text>
-            Valorize sua oferta. Use uma vacina de cada vez. Assim, você terá
-            cartas na manga para continuar a negociação se o cliente recusar a
-            primeira oferta.
-          </Text>
         </DialogWithIcon>
       </AnimatedWrapper>
 
