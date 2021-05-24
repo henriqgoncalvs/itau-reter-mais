@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import acolherIcon from 'assets/img/acolher.png';
 import confiancaIcon from 'assets/img/confianca.png';
 import tranquilizarIcon from 'assets/img/tranquilizar.png';
@@ -40,18 +38,11 @@ const options = [
 ];
 
 const Q3 = ({ nextPage }) => {
-  const { get } = usePipwerksContext();
-  const [user, setUser] = useState('');
+  const { user } = usePipwerksContext();
 
   const handleNext = () => {
     nextPage();
   };
-
-  useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
 
   return (
     <QuizBlock>

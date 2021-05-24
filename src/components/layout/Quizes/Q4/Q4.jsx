@@ -63,9 +63,8 @@ const collapsedBoxes = [
 ];
 
 const Q4 = ({ nextPage }) => {
-  const { set, get } = usePipwerksContext();
+  const { set, user } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
-  const [user, setUser] = useState('');
   const [answered, setAnswered] = useState(false);
   const [allBoxesSeen, setAllBoxesSeen] = useState(false);
 
@@ -81,12 +80,6 @@ const Q4 = ({ nextPage }) => {
       setAnswered(true);
     }
   }, [set, optionsAnswer, answered]);
-
-  useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
 
   return (
     <QuizBlock>

@@ -26,10 +26,9 @@ const options = [
 ];
 
 const Q8 = ({ nextPage }) => {
-  const { set, get } = usePipwerksContext();
+  const { set, user } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [answered, setAnswered] = useState(false);
-  const [user, setUser] = useState('');
 
   const handleNext = () => {
     if (optionsAnswer !== null && optionsAnswer === 0) {
@@ -38,14 +37,9 @@ const Q8 = ({ nextPage }) => {
   };
 
   useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
-
-  useEffect(() => {
     if (optionsAnswer === 0 && !answered) {
       set('score', 100);
+      set('status', 'completed');
       setAnswered(true);
     }
   }, [set, optionsAnswer, answered]);

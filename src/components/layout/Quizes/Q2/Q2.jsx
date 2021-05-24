@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
 import Button from 'components/common/Button/Button';
@@ -27,9 +27,8 @@ const options = [
 ];
 
 const Q2 = ({ nextPage }) => {
-  const { set, get } = usePipwerksContext();
+  const { set, user } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
-  const [user, setUser] = useState('');
 
   const handleNext = () => {
     if (optionsAnswer !== null) {
@@ -39,12 +38,6 @@ const Q2 = ({ nextPage }) => {
       nextPage();
     }
   };
-
-  useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
 
   return (
     <QuizBlock>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import acolherIcon from 'assets/img/acolher.png';
 import confiancaIcon from 'assets/img/confianca.png';
@@ -46,20 +46,14 @@ const informativeBoxes = [
 ];
 
 function Q9({ nextPage }) {
-  const { get, set } = usePipwerksContext();
-  const [user, setUser] = useState('');
+  const { user } = usePipwerksContext();
 
   useEffect(() => {
-    if (set) {
-      set('status', 'completed');
-    }
-  }, [set]);
-
-  useEffect(() => {
-    if (get) {
-      setUser(get('name'));
-    }
-  }, [get]);
+    console.log(`
+        FIM DO CURSO!
+        Você pode fechar esta aba :)
+      `);
+  }, []);
 
   const handleNext = () => {
     nextPage();

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import usePipwerks from 'hooks/use-pipwerks';
 
@@ -15,6 +15,7 @@ const PipwerksContext = createContext({
 
 const PipwerksProvider = ({ children }) => {
   const { pipwerks } = usePipwerks('libraries/SCORM_API_wrapper.js');
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     if (pipwerks) {
@@ -32,7 +33,7 @@ const PipwerksProvider = ({ children }) => {
   };
 
   return (
-    <PipwerksContext.Provider value={{ pipwerks, set, get }}>
+    <PipwerksContext.Provider value={{ pipwerks, set, get, user, setUser }}>
       {children}
     </PipwerksContext.Provider>
   );
