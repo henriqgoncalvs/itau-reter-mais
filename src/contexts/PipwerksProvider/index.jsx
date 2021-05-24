@@ -31,12 +31,8 @@ const PipwerksProvider = ({ children }) => {
     pipwerks.SCORM.get(dataModelParser[dataModel]);
   };
 
-  const incrementScore = (value) => {
-    pipwerks.SCORM.set(dataModelParser.score, (get('score') ?? 0) + value);
-  };
-
   return (
-    <PipwerksContext.Provider value={{ pipwerks, set, get, incrementScore }}>
+    <PipwerksContext.Provider value={{ pipwerks, set, get }}>
       {children}
     </PipwerksContext.Provider>
   );

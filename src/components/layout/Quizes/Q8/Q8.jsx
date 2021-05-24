@@ -26,9 +26,10 @@ const options = [
 ];
 
 const Q8 = ({ nextPage }) => {
-  const { incrementScore } = usePipwerksContext();
+  const { set, get } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [answered, setAnswered] = useState(false);
+  const [user, setUser] = useState('');
 
   const handleNext = () => {
     if (optionsAnswer !== null && optionsAnswer === 0) {
@@ -37,11 +38,17 @@ const Q8 = ({ nextPage }) => {
   };
 
   useEffect(() => {
+    if (get) {
+      setUser(get('name'));
+    }
+  }, [get]);
+
+  useEffect(() => {
     if (optionsAnswer === 0 && !answered) {
-      incrementScore(25);
+      set('score', 100);
       setAnswered(true);
     }
-  }, [incrementScore, optionsAnswer, answered]);
+  }, [set, optionsAnswer, answered]);
 
   return (
     <QuizBlock>
@@ -53,7 +60,7 @@ const Q8 = ({ nextPage }) => {
         <Text alignSelf="flex-start">
           Você mostrou todos os benefícios e fez as ofertas disponíveis de
           acordo com o perfil do cliente. Mas, ainda assim, ele não tem certeza…
-          E agora, o que você diz, User?
+          E agora, o que você diz, {user}?
         </Text>
 
         <Text alignSelf="flex-start">

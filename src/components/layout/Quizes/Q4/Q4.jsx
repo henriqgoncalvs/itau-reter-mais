@@ -63,7 +63,7 @@ const collapsedBoxes = [
 ];
 
 const Q4 = ({ nextPage }) => {
-  const { incrementScore, get } = usePipwerksContext();
+  const { set, get } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [user, setUser] = useState('');
   const [answered, setAnswered] = useState(false);
@@ -77,10 +77,10 @@ const Q4 = ({ nextPage }) => {
 
   useEffect(() => {
     if (optionsAnswer === 1 && !answered) {
-      incrementScore(25);
+      set('score', 50);
       setAnswered(true);
     }
-  }, [incrementScore, optionsAnswer, answered]);
+  }, [set, optionsAnswer, answered]);
 
   useEffect(() => {
     if (get) {

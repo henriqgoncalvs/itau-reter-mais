@@ -27,14 +27,14 @@ const options = [
 ];
 
 const Q2 = ({ nextPage }) => {
-  const { incrementScore, get } = usePipwerksContext();
+  const { set, get } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [user, setUser] = useState('');
 
   const handleNext = () => {
     if (optionsAnswer !== null) {
       if (optionsAnswer === 2) {
-        incrementScore(25);
+        set('score', 25);
       }
       nextPage();
     }
