@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
-import variants from 'variables/animations.motion';
+import variants from 'mock/animations.motion';
 
 function AnimatedWrapper({ delay = 0, direction = 'left', children }) {
   const controls = useAnimation();

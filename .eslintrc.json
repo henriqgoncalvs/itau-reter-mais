@@ -68,7 +68,7 @@
                   ["^react", "^@?\\w"],
                   // Internal packages.
                   ["^(assets)(/.*|$)"],
-                  ["^(variables)(/.*|$)"],
+                  ["^(mock)(/.*|$)"],
                   ["^(components)(/.*|$)"],
                   ["^(contexts)(/.*|$)"],
                   ["^(hooks)(/.*|$)"],
