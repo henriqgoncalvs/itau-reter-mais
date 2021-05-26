@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import Q1 from 'components/layout/Quizes/Q1';
 import Q2 from 'components/layout/Quizes/Q2';
@@ -18,91 +18,55 @@ const QuizScreen = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [displayArray, setDisplayArray] = useState([true]);
 
-  const quizRefs = useRef(new Array());
-
   const nextPage = () => {
     const newIndex = activeIndex < 10 ? activeIndex + 1 : activeIndex;
     setDisplayArray((prev) => ({ ...prev, [newIndex]: true }));
     setActiveIndex(newIndex);
   };
 
-  useEffect(() => {
-    quizRefs.current[activeIndex].scrollIntoView();
-  }, [activeIndex]);
-
   return (
     <>
-      <div ref={(element) => (quizRefs.current[0] = element)}>
+      <div>
         <InitialScreen nextPage={nextPage} />
       </div>
 
-      <QuizPage
-        display={displayArray[1] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[1] = element)}
-      >
+      <QuizPage display={displayArray[1] ? 'flex' : 'none'}>
         <Q1 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[2] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[2] = element)}
-      >
+      <QuizPage display={displayArray[2] ? 'flex' : 'none'}>
         <Q2 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[3] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[3] = element)}
-      >
+      <QuizPage display={displayArray[3] ? 'flex' : 'none'}>
         <Q3 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[4] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[4] = element)}
-      >
+      <QuizPage display={displayArray[3] ? 'flex' : 'none'}>
         <Q4 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[5] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[5] = element)}
-      >
+      <QuizPage display={displayArray[3] ? 'flex' : 'none'}>
         <Q5 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[6] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[6] = element)}
-      >
+      <QuizPage display={displayArray[4] ? 'flex' : 'none'}>
         <Q6 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[7] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[7] = element)}
-      >
+      <QuizPage display={displayArray[7] ? 'flex' : 'none'}>
         <Q7 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[8] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[8] = element)}
-      >
+      <QuizPage display={displayArray[8] ? 'flex' : 'none'}>
         <Q8 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[9] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[9] = element)}
-      >
+      <QuizPage display={displayArray[9] ? 'flex' : 'none'}>
         <Q9 nextPage={nextPage} />
       </QuizPage>
 
-      <QuizPage
-        display={displayArray[10] ? 'flex' : 'none'}
-        ref={(element) => (quizRefs.current[10] = element)}
-      >
+      <QuizPage display={displayArray[10] ? 'flex' : 'none'}>
         <Q10 nextPage={nextPage} />
       </QuizPage>
     </>

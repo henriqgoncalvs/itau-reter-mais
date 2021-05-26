@@ -1,12 +1,8 @@
-import { forwardRef } from 'react';
-
 import * as S from './QuizPage.styles';
 
-const QuizPage = forwardRef(({ children, ...rest }, ref) => (
-  <S.Wrapper ref={ref} {...rest}>
-    {children}
-  </S.Wrapper>
-));
+const QuizPage = ({ children, ...rest }) => (
+  <S.Wrapper {...rest}>{children}</S.Wrapper>
+);
 
 QuizPage.displayName = 'QuizPage';
 
