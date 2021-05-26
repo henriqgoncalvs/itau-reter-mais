@@ -47,7 +47,7 @@ const Q3 = () => {
         </Text>
       </AnimatedWrapper>
 
-      <AnimatedWrapper delay={0.6}>
+      <AnimatedWrapper delay={0.6} layout>
         <Dialog>
           <Dialog.Box>
             Bom dia, Tiago! Bem-vindo(a) ao meu atendimento. Meu nome é {user},

@@ -1,5 +1,6 @@
 import aumentarLimiteImg from 'assets/img/aumentar-limite.jpg';
 import desempregadoImg from 'assets/img/desempregado.jpg';
+import exclamationImg from 'assets/img/exclamation.svg';
 import muitoCaroImg from 'assets/img/muito-caro.jpg';
 import naoUsoImg from 'assets/img/nao-uso.jpg';
 
@@ -166,7 +167,7 @@ const Q6 = () => {
 
         <InfoBoxes boxes={financialDifficutiesBoxes} />
 
-        <DialogWithIcon>
+        <DialogWithIcon iconSrc={exclamationImg}>
           <Text>
             Em caso de <strong>mudança de grade</strong>, reforce todos os
             detalhes, principalmente sobre perda de benefícios e alteração no

@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 import variants from 'mock/animations.motion';
 
-function AnimatedWrapper({ delay = 0, direction = 'left', children }) {
+function AnimatedWrapper({ delay = 0, direction = 'left', children, ...rest }) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -28,6 +28,7 @@ function AnimatedWrapper({ delay = 0, direction = 'left', children }) {
         alignItems: 'center',
         justifyContent: 'center',
       }}
+      {...rest}
     >
       {children}
     </motion.div>
