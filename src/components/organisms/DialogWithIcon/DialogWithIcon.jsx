@@ -6,13 +6,17 @@ function DialogWithIcon({
   gifSrc,
   direction = 'left',
   withBackground = false,
+  withIcon = true,
+  iconSrc,
   children,
 }) {
   return (
     <S.Wrapper direction={direction} withBackground={withBackground}>
-      <S.Img gifSrc={gifSrc}>
-        <img src={womanYellow} />
-      </S.Img>
+      {withIcon && (
+        <S.Img gifSrc={gifSrc}>
+          <img src={iconSrc || womanYellow} />
+        </S.Img>
+      )}
       <S.Text>{children}</S.Text>
       {gifSrc && (
         <S.Gif>

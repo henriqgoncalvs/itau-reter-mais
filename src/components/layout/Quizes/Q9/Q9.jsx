@@ -62,7 +62,7 @@ function Q9({ nextPage }) {
   return (
     <QuizBlock>
       <AnimatedWrapper direction="top">
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Cliente retido?
         </Text>
 
@@ -90,14 +90,14 @@ function Q9({ nextPage }) {
         <InfoBoxes boxes={informativeBoxes} />
       </AnimatedWrapper>
 
-      <AnimatedWrapper direction="right" delay={1.7}>
-        <DialogWithIcon>
+      <AnimatedWrapper direction="right" delay={1.3}>
+        <DialogWithIcon withIcon={false}>
           Ficamos por aqui, {user}! Mas você pode continuar sua jornada e
           aprender mais sobre retenção.
         </DialogWithIcon>
       </AnimatedWrapper>
 
-      <AnimatedWrapper direction="bottom" delay={1.9}>
+      <AnimatedWrapper direction="bottom" delay={1.3}>
         <Button size="large" onClick={handleNext}>
           Finalizar
         </Button>

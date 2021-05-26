@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import apaixonadoImg from 'assets/img/in-love.png';
 import leoCongrats from 'assets/img/leo-congrats.gif';
 import notSoFast from 'assets/img/not-so-fast.gif';
+import pensandoImg from 'assets/img/thinking.png';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
+import NextPageIcon from 'components/common/NextPageIcon/NextPageIcon';
 import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
 import DialogAnswerFeedback from 'components/organisms/DialogAnswerFeedback/DialogAnswerFeedback';
@@ -67,12 +69,21 @@ const Q4 = ({ nextPage }) => {
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [answered, setAnswered] = useState(false);
   const [allBoxesSeen, setAllBoxesSeen] = useState(false);
+  const [showNextSection, setShowNextSection] = useState(false);
 
-  const handleNext = () => {
-    if (optionsAnswer && optionsAnswer === 1 && allBoxesSeen) {
+  // const handleNext = () => {
+  //   if (optionsAnswer && optionsAnswer === 1 && allBoxesSeen) {
+  //     nextPage();
+  //   }
+  // };
+
+  useEffect(() => {
+    if (allBoxesSeen) {
       nextPage();
+      setShowNextSection(true);
     }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allBoxesSeen]);
 
   useEffect(() => {
     if (optionsAnswer === 1 && !answered) {
@@ -84,7 +95,7 @@ const Q4 = ({ nextPage }) => {
   return (
     <QuizBlock>
       <AnimatedWrapper direction="top">
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Entenda o motivo
         </Text>
 
@@ -95,7 +106,7 @@ const Q4 = ({ nextPage }) => {
       </AnimatedWrapper>
 
       <AnimatedWrapper delay={0.6}>
-        <DialogWithIcon>
+        <DialogWithIcon iconSrc={pensandoImg}>
           <Text>
             Compreenda se houve algum motivo de insatisfação com o banco para
             que possamos resolver.
@@ -116,8 +127,8 @@ const Q4 = ({ nextPage }) => {
         </Dialog>
       </AnimatedWrapper>
 
-      <AnimatedWrapper delay={1.6}>
-        <DialogWithIcon>
+      <AnimatedWrapper delay={1.3}>
+        <DialogWithIcon iconSrc={apaixonadoImg}>
           <Text>
             Lembre-o sobre o tempo que tem o cartão. Se ele ficou com a gente
             por tanto tempo, é porque gostou dos serviços e condições.
@@ -125,7 +136,7 @@ const Q4 = ({ nextPage }) => {
         </DialogWithIcon>
       </AnimatedWrapper>
 
-      <AnimatedWrapper direction="left" delay={2}>
+      <AnimatedWrapper direction="left" delay={1.5}>
         <Dialog>
           <Dialog.Box>
             Você tem cartão conosco há 5 anos. Teve algum problema neste
@@ -139,13 +150,13 @@ const Q4 = ({ nextPage }) => {
         </Dialog>
       </AnimatedWrapper>
 
-      <AnimatedWrapper delay={2.2}>
-        <DialogWithIcon>
+      <AnimatedWrapper delay={1.6}>
+        <DialogWithIcon withIcon={false}>
           <Text>E agora, {user}, o que você diz ao cliente?</Text>
         </DialogWithIcon>
       </AnimatedWrapper>
 
-      <AnimatedWrapper direction="bottom" delay={2.5}>
+      <AnimatedWrapper direction="bottom" delay={1.6}>
         <QuestionsCheckbox
           setValue={setOptionsAnswer}
           options={options}
@@ -172,6 +183,9 @@ const Q4 = ({ nextPage }) => {
 
         {answered && (
           <AnimatedWrapper direction="bottom">
+            <Text size="medium" weight="bold">
+              Clique nos cards
+            </Text>
             <InfoBoxesCollapsed
               boxes={collapsedBoxes}
               setAllBoxesSeen={setAllBoxesSeen}
@@ -180,16 +194,11 @@ const Q4 = ({ nextPage }) => {
         )}
       </AnimatedWrapper>
 
-      <AnimatedWrapper direction="bottom" delay={2.7}>
-        <Button
-          onClick={handleNext}
-          disabled={
-            optionsAnswer === null || optionsAnswer === 0 || !allBoxesSeen
-          }
-        >
-          Confirmar
-        </Button>
-      </AnimatedWrapper>
+      {showNextSection && (
+        <AnimatedWrapper direction="bottom">
+          <NextPageIcon />
+        </AnimatedWrapper>
+      )}
     </QuizBlock>
   );
 };

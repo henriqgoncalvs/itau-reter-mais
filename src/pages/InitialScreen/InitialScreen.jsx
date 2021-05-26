@@ -3,13 +3,19 @@ import Text from 'components/common/Text/Text';
 import QuizBlock from 'components/organisms/QuizBlock/QuizBlock';
 import QuizPage from 'components/organisms/QuizPage/QuizPage';
 
-const InitialScreen = ({ nextPage }) => (
+const InitialScreen = ({ nextPage, setInitialScroll }) => (
   <QuizPage>
     <QuizBlock>
       <Text tag="h1" size="large" weight="bold" align="center">
         Olá! <br /> Que bom ter você nessa jornada!
       </Text>
-      <Button size="large" onClick={() => nextPage()}>
+      <Button
+        size="large"
+        onClick={() => {
+          setInitialScroll(true);
+          nextPage();
+        }}
+      >
         Começar!
       </Button>
     </QuizBlock>

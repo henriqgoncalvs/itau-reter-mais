@@ -4,7 +4,7 @@ import justin from 'assets/img/nao-vejo-a-hora-de-lancar-spiderman-no-way-home.g
 import suzana from 'assets/img/suzana-parabens.gif';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
+import NextPageIcon from 'components/common/NextPageIcon/NextPageIcon';
 import Text from 'components/common/Text/Text';
 import DialogAnswerFeedback from 'components/organisms/DialogAnswerFeedback';
 import QuestionsCheckbox from 'components/organisms/QuestionsCheckbox';
@@ -29,25 +29,23 @@ const Q8 = ({ nextPage }) => {
   const { set, user } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [answered, setAnswered] = useState(false);
-
-  const handleNext = () => {
-    if (optionsAnswer !== null && optionsAnswer === 0) {
-      nextPage();
-    }
-  };
+  const [showNextSection, setShowNextSection] = useState(false);
 
   useEffect(() => {
     if (optionsAnswer === 0 && !answered) {
       set('score', 100);
       set('status', 'completed');
       setAnswered(true);
+      setShowNextSection(true);
+      nextPage();
     }
-  }, [set, optionsAnswer, answered]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [optionsAnswer]);
 
   return (
     <QuizBlock>
       <AnimatedWrapper direction="top">
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Conduza para o fechamento
         </Text>
 
@@ -90,14 +88,11 @@ const Q8 = ({ nextPage }) => {
         </AnimatedWrapper>
       )}
 
-      <AnimatedWrapper direction="bottom" delay={1.2}>
-        <Button
-          onClick={handleNext}
-          disabled={optionsAnswer === null || optionsAnswer === 1}
-        >
-          Confirmar
-        </Button>
-      </AnimatedWrapper>
+      {showNextSection && (
+        <AnimatedWrapper direction="bottom">
+          <NextPageIcon />
+        </AnimatedWrapper>
+      )}
     </QuizBlock>
   );
 };

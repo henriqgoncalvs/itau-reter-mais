@@ -1,5 +1,9 @@
+import aumentarLimiteImg from 'assets/img/aumentar-limite.jpg';
+import desempregadoImg from 'assets/img/desempregado.jpg';
+import muitoCaroImg from 'assets/img/muito-caro.jpg';
+import naoUsoImg from 'assets/img/nao-uso.jpg';
+
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
 import DialogWithIcon from 'components/organisms/DialogWithIcon';
@@ -54,22 +58,20 @@ const financialDifficutiesBoxes = [
   },
 ];
 
-const Q6 = ({ nextPage }) => {
-  const handleNext = () => {
-    nextPage();
-  };
-
+const Q6 = () => {
   return (
     <QuizBlock>
       <AnimatedWrapper direction="top">
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Cada situação, uma solução!
         </Text>
 
         <Text alignSelf="flex-start">
           Sabe aquele discurso pronto, na ponta da língua? Pode esquecer! O
-          cliente quer uma solução que é a cara dele. Dá uma olhada nas ofertas
-          que você pode fazer de acordo com o motivo que ele trouxe:
+          cliente quer uma solução que é a cara dele. Dá uma olhada nas{' '}
+          <strong>ofertas</strong>
+          que você pode fazer de acordo com o <strong>motivo</strong> que ele
+          trouxe:
         </Text>
       </AnimatedWrapper>
 
@@ -81,12 +83,12 @@ const Q6 = ({ nextPage }) => {
         </Text>
 
         <Dialog>
-          <Dialog.Box direction="left" withIcon>
+          <Dialog.Box direction="left" withIcon iconSrc={muitoCaroImg}>
             Minha anuidade é muito alta, é um absurdo…
           </Dialog.Box>
         </Dialog>
 
-        <DialogWithIcon direction="right">
+        <DialogWithIcon direction="right" withIcon={false}>
           <Text>
             Se mesmo depois de argumentar sobre todos os benefícios, o cliente
             ainda não estiver convencido, fale sobre:
@@ -104,12 +106,12 @@ const Q6 = ({ nextPage }) => {
         </Text>
 
         <Dialog>
-          <Dialog.Box direction="left" withIcon>
+          <Dialog.Box direction="left" withIcon iconSrc={naoUsoImg}>
             Não uso cartão pra nada. Não acho vantagem em ter esse cartão.
           </Dialog.Box>
         </Dialog>
 
-        <DialogWithIcon direction="right">
+        <DialogWithIcon direction="right" withIcon={false}>
           <Text>
             Se mesmo depois de argumentar sobre todos os benefícios, o cliente
             ainda não estiver convencido, fale sobre:
@@ -127,12 +129,12 @@ const Q6 = ({ nextPage }) => {
         </Text>
 
         <Dialog>
-          <Dialog.Box direction="left" withIcon>
+          <Dialog.Box direction="left" withIcon iconSrc={aumentarLimiteImg}>
             Eu gostaria de aumentar meu limite...
           </Dialog.Box>
         </Dialog>
 
-        <DialogWithIcon direction="right">
+        <DialogWithIcon direction="right" withIcon={false}>
           <Text>
             Se mesmo depois de argumentar sobre todos os benefícios, o cliente
             ainda não estiver convencido, fale sobre:
@@ -149,13 +151,13 @@ const Q6 = ({ nextPage }) => {
           Dificuldade financeira
         </Text>
         <Dialog>
-          <Dialog.Box direction="left" withIcon>
+          <Dialog.Box direction="left" withIcon iconSrc={desempregadoImg}>
             Neste momento estou desempregado, não tenho condições de pagar a
             anuidade.
           </Dialog.Box>
         </Dialog>
 
-        <DialogWithIcon direction="right">
+        <DialogWithIcon direction="right" withIcon={false}>
           <Text>
             Se mesmo depois de argumentar sobre todos os benefícios, o cliente
             ainda não estiver convencido, fale sobre:
@@ -171,10 +173,6 @@ const Q6 = ({ nextPage }) => {
             programa de pontos.
           </Text>
         </DialogWithIcon>
-      </AnimatedWrapper>
-
-      <AnimatedWrapper direction="bottom" delay={2}>
-        <Button onClick={handleNext}>Confirmar</Button>
       </AnimatedWrapper>
     </QuizBlock>
   );

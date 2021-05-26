@@ -6,7 +6,6 @@ import prejulgamentoIcon from 'assets/img/pre-julgamento.png';
 import precoIcon from 'assets/img/preco.png';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
 import Text from 'components/common/Text/Text';
 import DialogWithIcon from 'components/organisms/DialogWithIcon';
 import InformativeCheckboxes from 'components/organisms/InformativeCheckboxes';
@@ -40,15 +39,11 @@ const options = [
   },
 ];
 
-const Q7 = ({ nextPage }) => {
-  const handleNext = () => {
-    nextPage();
-  };
-
+const Q7 = () => {
   return (
     <QuizBlock>
       <AnimatedWrapper direction="top">
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Negocie
         </Text>
 
@@ -70,7 +65,7 @@ const Q7 = ({ nextPage }) => {
       </AnimatedWrapper>
 
       <AnimatedWrapper delay={1.8}>
-        <DialogWithIcon gifSrc={think}>
+        <DialogWithIcon gifSrc={think} withIcon={false}>
           <Text weight="bold" size="medium" style={{ marginBottom: '1rem' }}>
             Pega essa dica!
           </Text>
@@ -80,10 +75,6 @@ const Q7 = ({ nextPage }) => {
             cliente recusar a primeira oferta.
           </Text>
         </DialogWithIcon>
-      </AnimatedWrapper>
-
-      <AnimatedWrapper direction="bottom" delay={2}>
-        <Button onClick={handleNext}>Confirmar</Button>
       </AnimatedWrapper>
     </QuizBlock>
   );

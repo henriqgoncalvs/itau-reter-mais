@@ -5,7 +5,7 @@ import simon from 'assets/img/simon-congrats.gif';
 import will from 'assets/img/will-smith.gif';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
+import NextPageIcon from 'components/common/NextPageIcon/NextPageIcon';
 import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
 import DialogAnswerFeedback from 'components/organisms/DialogAnswerFeedback/DialogAnswerFeedback';
@@ -54,24 +54,27 @@ const Q5 = ({ nextPage }) => {
   const { set, user } = usePipwerksContext();
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [answered, setAnswered] = useState(false);
+  const [showNextSection, setShowNextSection] = useState(false);
 
-  const handleNext = () => {
-    if (optionsAnswer !== null && optionsAnswer === 0) {
-      nextPage();
-    }
-  };
+  // const handleNext = () => {
+  //   if (optionsAnswer !== null && optionsAnswer === 0) {
+  //   }
+  // };
 
   useEffect(() => {
     if (optionsAnswer === 0 && !answered) {
+      nextPage();
       set('score', 75);
       setAnswered(true);
+      setShowNextSection(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [set, optionsAnswer, answered]);
 
   return (
     <QuizBlock>
       <AnimatedWrapper>
-        <Text alignSelf="flex-start" weight="bold" size="medium">
+        <Text weight="bold" size="large">
           Mostre os benefícios!
         </Text>
 
@@ -101,7 +104,7 @@ const Q5 = ({ nextPage }) => {
       </AnimatedWrapper>
 
       <AnimatedWrapper direction="right" delay={1.5}>
-        <DialogWithIcon gifSrc={will}>
+        <DialogWithIcon gifSrc={will} withIcon={false}>
           <Text weight="bold">Pega essa dica!</Text>
           <Text>
             Dê exemplos e mostre as vantagens de um jeito que o cliente entende.
@@ -119,7 +122,7 @@ const Q5 = ({ nextPage }) => {
       </AnimatedWrapper>
 
       <AnimatedWrapper direction="right" delay={2.5}>
-        <DialogWithIcon>
+        <DialogWithIcon withIcon={false}>
           <Text>
             É com você, {user}! Qual é a melhor forma de falar desse benefício
             na prática?
@@ -153,14 +156,11 @@ const Q5 = ({ nextPage }) => {
         </AnimatedWrapper>
       )}
 
-      <AnimatedWrapper direction="bottom" delay={2.7}>
-        <Button
-          onClick={handleNext}
-          disabled={optionsAnswer === null || optionsAnswer === 1}
-        >
-          Confirmar
-        </Button>
-      </AnimatedWrapper>
+      {showNextSection && (
+        <AnimatedWrapper direction="bottom">
+          <NextPageIcon />
+        </AnimatedWrapper>
+      )}
     </QuizBlock>
   );
 };

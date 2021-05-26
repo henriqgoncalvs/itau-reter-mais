@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper/AnimatedWrapper';
+import Button from 'components/common/Button';
 import Line from 'components/common/Line/Line';
 import NextPageIcon from 'components/common/NextPageIcon';
 import Text from 'components/common/Text/Text';
@@ -31,16 +32,13 @@ const Q2 = ({ nextPage }) => {
   const [optionsAnswer, setOptionsAnswer] = useState(null);
   const [showNextSection, setShowNextSection] = useState(false);
 
-  useEffect(() => {
+  const handleNext = () => {
     if (optionsAnswer !== null) {
       setShowNextSection(true);
-      if (optionsAnswer === 2) {
-        set('score', 25);
-      }
+      set('score', 25);
       nextPage();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [optionsAnswer, set, setShowNextSection]);
+  };
 
   return (
     <QuizBlock>
@@ -63,27 +61,32 @@ const Q2 = ({ nextPage }) => {
         />
       </AnimatedWrapper>
 
-      {showNextSection && (
-        <AnimatedWrapper direction="right">
-          <Line />
-          <Text align="center">
-            Todos esses motivos fazem os olhos do cliente brilhar.
-            Principalmente quando falamos de algo tão importante: sua{' '}
-            <strong>vida financeira</strong>.
-          </Text>
-          <Text align="center">
-            Afinal, isso engloba uma série de outras coisas importantes para
-            ele: seus <strong>sonhos</strong>, sua <strong>família</strong>,
-            suas <strong>conquistas</strong> e até suas{' '}
-            <strong>dificuldades</strong> no momento.
-          </Text>
+      {!showNextSection && (
+        <AnimatedWrapper direction="bottom" delay={2.4}>
+          <Button onClick={handleNext}>Confirmar</Button>
         </AnimatedWrapper>
       )}
 
       {showNextSection && (
-        <AnimatedWrapper direction="bottom" delay={1.2}>
-          <NextPageIcon />
-        </AnimatedWrapper>
+        <>
+          <AnimatedWrapper direction="right">
+            <Line />
+            <Text align="center">
+              Todos esses motivos fazem os olhos do cliente brilhar.
+              Principalmente quando falamos de algo tão importante: sua{' '}
+              <strong>vida financeira</strong>.
+            </Text>
+            <Text align="center">
+              Afinal, isso engloba uma série de outras coisas importantes para
+              ele: seus <strong>sonhos</strong>, sua <strong>família</strong>,
+              suas <strong>conquistas</strong> e até suas{' '}
+              <strong>dificuldades</strong> no momento.
+            </Text>
+          </AnimatedWrapper>
+          <AnimatedWrapper direction="bottom" delay={1.2}>
+            <NextPageIcon />
+          </AnimatedWrapper>
+        </>
       )}
     </QuizBlock>
   );

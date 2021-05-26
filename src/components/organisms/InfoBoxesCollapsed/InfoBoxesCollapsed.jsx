@@ -37,7 +37,7 @@ function InfoBoxesCollapsed({ boxes, setAllBoxesSeen }) {
       </S.BoxWrapper>
 
       {openCollapsed === 0 && (
-        <DialogWithIcon withBackground>
+        <DialogWithIcon withBackground withIcon={false}>
           {boxes?.[0].collapsedComponent?.title && (
             <Text weight="bold">{boxes?.[0].collapsedComponent?.title}</Text>
           )}
@@ -47,7 +47,7 @@ function InfoBoxesCollapsed({ boxes, setAllBoxesSeen }) {
       )}
 
       {openCollapsed === 1 && (
-        <DialogWithIcon withBackground>
+        <DialogWithIcon withBackground withIcon={false}>
           {boxes?.[1].collapsedComponent?.title && (
             <Text weight="bold">{boxes?.[1].collapsedComponent?.title}</Text>
           )}
@@ -56,7 +56,7 @@ function InfoBoxesCollapsed({ boxes, setAllBoxesSeen }) {
         </DialogWithIcon>
       )}
       {openCollapsed === 2 && (
-        <DialogWithIcon withBackground>
+        <DialogWithIcon withBackground withIcon={false}>
           {boxes?.[2].collapsedComponent?.title && (
             <Text weight="bold">{boxes?.[2].collapsedComponent?.title}</Text>
           )}

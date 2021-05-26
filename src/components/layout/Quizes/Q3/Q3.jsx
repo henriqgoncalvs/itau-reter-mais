@@ -4,7 +4,6 @@ import tranquilizarIcon from 'assets/img/tranquilizar.png';
 import willSmith from 'assets/img/will-smith.gif';
 
 import AnimatedWrapper from 'components/common/AnimatedWrapper';
-import Button from 'components/common/Button/Button';
 import Line from 'components/common/Line/Line';
 import Text from 'components/common/Text/Text';
 import Dialog from 'components/organisms/Dialog';
@@ -36,12 +35,8 @@ const options = [
   },
 ];
 
-const Q3 = ({ nextPage }) => {
+const Q3 = () => {
   const { user } = usePipwerksContext();
-
-  const handleNext = () => {
-    nextPage();
-  };
 
   return (
     <QuizBlock>
@@ -68,7 +63,7 @@ const Q3 = ({ nextPage }) => {
       <Line />
 
       <AnimatedWrapper direction="right" delay={1.8}>
-        <DialogWithIcon gifSrc={willSmith}>
+        <DialogWithIcon gifSrc={willSmith} withIcon={false}>
           <Text weight="bold" size="medium" style={{ marginBottom: '1rem' }}>
             Pega essa dica!
           </Text>
@@ -79,10 +74,6 @@ const Q3 = ({ nextPage }) => {
             <strong>propostas personalizadas</strong>.
           </Text>
         </DialogWithIcon>
-      </AnimatedWrapper>
-
-      <AnimatedWrapper direction="bottom" delay={2.4}>
-        <Button onClick={handleNext}>Confirmar</Button>
       </AnimatedWrapper>
     </QuizBlock>
   );
