@@ -20,13 +20,13 @@ const yesNoItems = {
     'Confirme o tipo de cartão contratado.',
     'Faça um resumo das novas condições do cartão para evitar dúvidas no futuro.',
     'Em caso de mudança de grade, explique todos os detalhes e pergunte se o cliente tem dúvidas.',
-    'Caso o cliente solicite, gere o número de protocolo do atendimento.',
+    'Caso cliente solicite, gere o número de protocolo de acordo com procedimento da sua central.',
   ],
   no: [
     'Informe as condições do cancelamento (checklist colaborativa) antes de efetivá-lo.',
     'Para os cartões que possuem programas de pontos, destaque que ele deixará de participar do programa e não pontuará mais nas próximas faturas.',
     'Confirme que o cartão foi cancelado.',
-    'Caso o cliente solicite, gere o número de protocolo do atendimento.',
+    'Caso cliente solicite, gere o número de protocolo de acordo com procedimento da sua central.',
   ],
 };
 
