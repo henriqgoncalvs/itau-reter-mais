@@ -45,6 +45,18 @@ const informativeBoxes = [
   },
 ];
 
+const pillarBoxes = [
+  {
+    text: 'Fazer o melhor',
+  },
+  {
+    text: 'Humanizar',
+  },
+  {
+    text: 'Resolver',
+  },
+];
+
 function Q9({ nextPage }) {
   const { user } = usePipwerksContext();
 
@@ -95,6 +107,10 @@ function Q9({ nextPage }) {
           Ficamos por aqui, {user}! Mas você pode continuar sua jornada e
           aprender mais sobre retenção.
         </DialogWithIcon>
+      </AnimatedWrapper>
+
+      <AnimatedWrapper delay={1.3}>
+        <InfoBoxes boxes={pillarBoxes} />
       </AnimatedWrapper>
 
       <AnimatedWrapper direction="bottom" delay={1.3}>
